@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "NationalPark";
+  src: url("/fonts/NationalPark.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* This overrides Tailwind's default font, applying it globally to everything */
+  --font-sans: "NationalPark", ui-sans-serif, system-ui, sans-serif;
+  
+  /* You can still keep this if you want to use the class font-secondary explicitly */
+  --font-secondary: "NationalPark", sans-serif;
+}
+
+@layer base {
+  /* Extra safety net to force it on the document root */
+  html,
+  body {
+    font-family: var(--font-sans);
+  }
+}
