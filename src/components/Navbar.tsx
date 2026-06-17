@@ -35,7 +35,7 @@ export default function Navbar() {
               src="/logo.png"
               alt="Handover Experts Logo"
               // Slightly smaller on mobile to ensure it fits alongside the text and button
-              className="h-10 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-20 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
 
             {/* Always visible text */}
