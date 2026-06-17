@@ -42,7 +42,7 @@ export default function AboutSection() {
         <div
             ref={ref}
             style={{ backgroundColor: customColors.deepNavy }}
-            className="min-h-screen text-white pt-10 pb-10 relative overflow-hidden flex flex-col justify-start items-center "
+            className="min-h-screen text-white py-10 relative overflow-hidden flex flex-col justify-start items-center "
         >
             {/* Structural Minimal Grid Background */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
