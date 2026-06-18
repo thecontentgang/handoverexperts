@@ -1,14 +1,13 @@
-// Filename: ServicesSection.tsx
 import { motion, useAnimation, useInView, type Variants } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import BookingModal from "../components/BookingModal";
 import { 
   Home, 
   CheckSquare, 
   Droplets, 
-  Search, 
-  Ruler, 
+  Layers, 
+  TestTube, 
   ArrowRight,
-  CheckCircle,
   CalendarCheck
 } from "lucide-react";
 
@@ -18,7 +17,7 @@ const colors = {
   white: "#FFFFFF",
 };
 
-// --- Simple, Normal English Service Data ---
+// --- Updated Service Data ---
 const servicesData = [
   {
     id: 1,
@@ -34,21 +33,21 @@ const servicesData = [
   },
   {
     id: 3,
-    title: "Moisture Check",
-    description: "Hidden water leaks can ruin your walls. We use special tools to find any wet spots hidden inside the walls before they cause damage.",
+    title: "Seepage Inspection",
+    description: "Hidden water seepage can ruin your interiors. We use specialized thermal tools to detect dampness and leaks before they spread.",
     icon: Droplets,
   },
   {
     id: 4,
-    title: "Step-by-Step Check",
-    description: "We visit your property at different stages of building to catch mistakes early, long before the walls are painted and closed up.",
-    icon: Search,
+    title: "Multi-Stage Inspection",
+    description: "We evaluate your property at critical construction phases, catching structural and finishing mistakes long before the walls are closed up.",
+    icon: Layers,
   },
   {
     id: 5,
-    title: "Area Measurement",
-    description: "We carefully measure every room and corner so you know exactly how much space you are actually getting for your money.",
-    icon: Ruler,
+    title: "Water Quality Check",
+    description: "We test the water supply for TDS levels, hardness, and impurities to ensure it's safe for your family, plumbing, and appliances.",
+    icon: TestTube,
   },
 ];
 
@@ -71,6 +70,8 @@ const cardVariants: Variants = {
 };
 
 export default function ServicesSection() {
+
+  const [isModalOpen, setIsModalOpen ] = useState(false);
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -82,6 +83,7 @@ export default function ServicesSection() {
   }, [controls, inView]);
 
   return (
+    <>
     <section
       ref={ref}
       style={{ backgroundColor: colors.white }}
@@ -96,17 +98,6 @@ export default function ServicesSection() {
           animate={controls}
           className="text-center max-w-3xl mx-auto mb-20 space-y-4"
         >
-          <motion.div
-            variants={cardVariants}
-            style={{ backgroundColor: colors.navy }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full"
-          >
-            <CheckCircle size={14} style={{ color: colors.yellow }} />
-            <span className="text-xs font-bold tracking-wider text-white uppercase">
-              What We Do
-            </span>
-          </motion.div>
-          
           <motion.h2
             variants={cardVariants}
             style={{ color: colors.navy }}
@@ -206,6 +197,7 @@ export default function ServicesSection() {
             variants={cardVariants}
             whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(15,45,129,0.25)" }}
             whileTap={{ scale: 0.96 }}
+            onClick= {() => {setIsModalOpen(true)}}
             style={{ backgroundColor: colors.navy, color: colors.white }}
             className="px-8 py-4 mt-2 rounded-2xl font-bold text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 transition-all"
           >
@@ -217,5 +209,7 @@ export default function ServicesSection() {
 
       </div>
     </section>
+    <BookingModal  isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}}/>
+    </>
   );
 }

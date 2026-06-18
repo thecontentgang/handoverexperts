@@ -20,26 +20,11 @@ const WhatsAppIcon = ({ size = 24 }: { size?: number }) => (
   </svg>
 );
 
-const InstagramIcon = ({ size = 24 }: { size?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5ZM20 16.25A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4h8.5A3.75 3.75 0 0 1 20 7.75v8.5ZM17 6.5A1.5 1.5 0 1 0 17 9.5A1.5 1.5 0 0 0 17 6.5ZM12 7A5 5 0 1 0 12 17A5 5 0 0 0 12 7ZM12 9A3 3 0 1 1 12 15A3 3 0 0 1 12 9Z" />
-  </svg>
-);
+
 
 export default function FloatingContactButton() {
   const actions = [
-    {
-      icon: <InstagramIcon size={24}  />,
-      label: "Instagram",
-      color: "#E1306C",
-      href: "https://instagram.com/handover.expert",
-    },
+  
     {
       icon: <Phone size={24} strokeWidth={2.5} />,
       label: "Call Us",
