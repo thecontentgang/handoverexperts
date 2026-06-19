@@ -13,8 +13,8 @@ const colors = {
 // --- YouTube Video IDs ---
 
 const youtubeVideoIds = [
-  "c3fo_EPwE74", // Video 1 ID
-  "krUQnKTUeuo", // Video 2 ID
+  "FdWON-XRKXQ", // Video 1 ID
+  "c3fo_EPwE74", // Video 2 ID
   "3BMvvqtGv34", // Video 3 ID
 ];
 
@@ -70,7 +70,7 @@ export default function ResultsSection() {
   }, [controls, inView]);
 
   return (
-    <section
+    <section id="results"
       ref={ref}
       style={{ backgroundColor: colors.white }}
       className="py-12 md:py-16 relative font-sans"

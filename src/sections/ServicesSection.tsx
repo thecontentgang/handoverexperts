@@ -84,7 +84,7 @@ export default function ServicesSection() {
 
   return (
     <>
-    <section
+    <section id="services"
       ref={ref}
       style={{ backgroundColor: colors.white }}
       className="py-20 relative font-sans"

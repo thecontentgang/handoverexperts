@@ -1,6 +1,6 @@
 import { motion, useAnimation, useInView, type Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { ClipboardCheck, ShieldAlert, Star, CheckCircle } from "lucide-react";
+import { ClipboardCheck, ShieldAlert, CheckCircle } from "lucide-react";
 
 const customColors = {
   deepNavy: "#0F2D81",   // Background Color
@@ -15,6 +15,31 @@ const containerVariants: Variants = {
     transition: { staggerChildren: 0.12, delayChildren: 0.15 },
   },
 };
+const GoogleLogo = ({ size = 20 }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    fill={customColors.deepNavy}
+    className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5"
+  >
+    <path d="M21.35 11.1H12v2.8h5.35c-.23 1.45-1.73 4.25-5.35 4.25-3.22 0-5.85-2.67-5.85-5.95s2.63-5.95 5.85-5.95c1.83 0 3.05.78 3.75 1.45l2.55-2.48C16.68 3.7 14.6 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9c5.2 0 8.65-3.65 8.65-8.8 0-.6-.05-.85-.15-1.1z" />
+  </svg>
+);
+
+const InstagramLogo = ({ size = 20 }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    fill={customColors.deepNavy}
+    className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5"
+  >
+    <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
+  </svg>
+);
 
 const fadeInUpVariants: Variants = {
   hidden: { opacity: 0, y: 25 },
@@ -38,7 +63,7 @@ export default function AboutSection() {
 
   return (
     <>
-      <div
+      <div id="about"
         ref={ref}
         style={{ backgroundColor: customColors.deepNavy }}
         className="min-h-screen text-white py-20 relative overflow-hidden flex flex-col justify-start items-center "
@@ -48,79 +73,93 @@ export default function AboutSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(238,189,8,0.06),transparent_60%)] pointer-events-none" />
 
         {/* Stats Row / Arc Layout */}
-        <motion.div
-          variants={fadeInUpVariants}
-          initial="hidden"
-          animate={controls}
-          className="w-full max-w-3xl flex flex-row justify-center items-end gap-2 sm:gap-6 md:gap-10 px-4 mb-16 z-10"
-        >
-          {/* Stat 1: Homes Checked */}
-          <motion.div
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-            className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl translate-y-5 sm:translate-y-8 md:translate-y-10 border border-[#0F2D81]/10 flex flex-col items-center justify-center"
-          >
-            <ClipboardCheck size={20} strokeWidth={2.5} style={{ color: customColors.deepNavy }} className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5" />
-            <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1 sm:mb-0">10K+</h3>
-            {/* Removed hidden sm:block, added leading-tight for nice mobile wrapping */}
-            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
-              Homes Checked
-            </p>
-          </motion.div>
+        {/* Stats Row */}
+<motion.div
+  variants={fadeInUpVariants}
+  initial="hidden"
+  animate={controls}
+  className="w-full max-w-3xl flex flex-row justify-center items-end gap-2 sm:gap-6 md:gap-10 px-4 mb-16 z-10"
+>
+  {/* Homes Checked */}
+  <div
+    style={{
+      backgroundColor: customColors.yellowGold,
+      color: customColors.deepNavy,
+    }}
+    className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl translate-y-5 sm:translate-y-8 md:translate-y-10 border border-[#0F2D81]/10 flex flex-col items-center justify-center"
+  >
+    <ClipboardCheck
+      size={20}
+      strokeWidth={2.5}
+      style={{ color: customColors.deepNavy }}
+      className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5"
+    />
+    <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1">
+      10K+
+    </h3>
+    <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
+      Homes Checked
+    </p>
+  </div>
 
-          {/* Stat 2: Defect Homes */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-            className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl translate-y-0 border border-[#0F2D81]/10 flex flex-col items-center justify-center"
-          >
-            <ShieldAlert size={20} strokeWidth={2.5} style={{ color: customColors.deepNavy }} className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5" />
-            <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1 sm:mb-0">40K+</h3>
-            {/* Removed hidden sm:block */}
-            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
-              Defects Found
-            </p>
-          </motion.div>
+  {/* Defects Found */}
+  <div
+    style={{
+      backgroundColor: customColors.yellowGold,
+      color: customColors.deepNavy,
+    }}
+    className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl border border-[#0F2D81]/10 flex flex-col items-center justify-center"
+  >
+    <ShieldAlert
+      size={20}
+      strokeWidth={2.5}
+      style={{ color: customColors.deepNavy }}
+      className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5"
+    />
+    <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1">
+      40K+
+    </h3>
+    <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
+      Defects Found
+    </p>
+  </div>
 
-          {/* Stat 3: Google Reviews */}
-          <motion.div
-            animate={{ y: [0, -7, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-            className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl translate-y-0 border border-[#0F2D81]/10 flex flex-col items-center justify-center"
-          >
-            <Star size={20} strokeWidth={2.5} fill={customColors.deepNavy} style={{ color: customColors.deepNavy }} className="mb-1 sm:mb-2 w-4 h-4 sm:w-5 sm:h-5" />
-            <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1 sm:mb-0">1K+</h3>
-            {/* Removed hidden sm:block */}
-            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
-              Google Reviews
-            </p>
-          </motion.div>
+  {/* Google Reviews */}
+  <div
+    style={{
+      backgroundColor: customColors.yellowGold,
+      color: customColors.deepNavy,
+    }}
+    className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl border border-[#0F2D81]/10 flex flex-col items-center justify-center"
+  >
+    <GoogleLogo size={20} />
+    <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1">
+      1K+
+    </h3>
+    <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
+      Google Reviews
+    </p>
+  </div>
 
-          {/* Stat 4: Instagram Followers */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
-            style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-            className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl translate-y-5 sm:translate-y-8 md:translate-y-10 border border-[#0F2D81]/10 flex flex-col items-center justify-center"
-          >
-            <svg 
-              viewBox="0 0 24 24" 
-              fill="currentColor" 
-              style={{ color: customColors.deepNavy }} 
-              className="w-4 h-4 sm:w-5 sm:h-5 mb-1 sm:mb-2"
-            >
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.822a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-            </svg>
-            <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1 sm:mb-0">58K+</h3>
-            {/* Removed hidden sm:block */}
-            <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
-              Followers
-            </p>
-          </motion.div>
-        </motion.div>
+  {/* Instagram Followers */}
+  <div
+    style={{
+      backgroundColor: customColors.yellowGold,
+      color: customColors.deepNavy,
+    }}
+    className="w-[22%] rounded-xl sm:rounded-2xl p-2 sm:p-5 text-center drop-shadow-xl translate-y-5 sm:translate-y-8 md:translate-y-10 border border-[#0F2D81]/10 flex flex-col items-center justify-center"
+  >
+    <InstagramLogo size={20} />
+
+    <h3 className="text-xs sm:text-2xl font-black tracking-tight leading-none mb-1">
+      58K+
+    </h3>
+
+    <p className="text-[8px] sm:text-xs font-bold uppercase tracking-wider opacity-75 leading-tight">
+      Followers
+    </p>
+  </div>
+</motion.div>
 
         {/* Main Narrative Content Container */}
         <motion.div
@@ -136,7 +175,7 @@ export default function AboutSection() {
           >
             <CheckCircle size={14} style={{ color: customColors.yellowGold }} />
             <span className="text-xs font-bold tracking-wider text-zinc-300 uppercase">
-              About Handover Experts
+              About Handover Expert
             </span>
           </motion.div>
 
@@ -165,7 +204,7 @@ export default function AboutSection() {
                 Buying a new home is a massive investment, yet many newly built apartments and villas contain hidden flaws that are easily missed during a standard walkthrough.
               </p>
               <p>
-                At <strong>Handover Experts</strong>, we conduct professional, independent property audits across Hyderabad. Our team uses advanced diagnostic tools to inspect every corner for water leakages, faulty wiring, structural cracks, and poor finishing layout issues.
+                At <strong>Handover Expert</strong>, we conduct professional, independent property audits across Hyderabad. Our team uses advanced diagnostic tools to inspect every corner for water leakages, faulty wiring, structural cracks, and poor finishing layout issues.
               </p>
               <p>
                 We provide a clear digital checklist with photos within 24 hours. This detailed documentation gives you total peace of mind and complete leverage to ensure the builder fixes all defects before your final possession.

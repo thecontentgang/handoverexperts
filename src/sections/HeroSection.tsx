@@ -167,12 +167,25 @@ export default function HeroSection() {
             </motion.button>
 
            <motion.button
-  whileHover={{ backgroundColor: "rgba(255,255,255,0.06)", borderColor: customColors.yellowGold }}
+  whileHover={{
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderColor: customColors.yellowGold,
+  }}
   whileTap={{ scale: 0.98 }}
-  onClick={() => window.location.href = "tel:6303363041"}
+  onClick={() => {
+    if (window.innerWidth < 640) {
+      window.location.href = "tel:+916303363041";
+    }
+  }}
   className="flex-1 sm:flex-none bg-transparent border border-white/20 text-white font-bold px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-[10px] sm:text-sm md:text-base tracking-wider uppercase transition-all flex items-center justify-center backdrop-blur-xs text-center leading-tight"
 >
-  Talk to Expert
+  <span className="sm:hidden">
+    Talk to Expert
+  </span>
+
+  <span className="hidden sm:inline">
+    +91 63033 63041
+  </span>
 </motion.button>
           </motion.div>
         </motion.div>

@@ -38,7 +38,7 @@ export default function Navbar() {
           <div className="relative z-10 flex items-center gap-1.5 min-[380px]:gap-2 group cursor-pointer shrink-0">
             <img
               src="/logo.png"
-              alt="Handover Experts Logo"
+              alt="Handover Expert Logo"
               // Scaled down logo for mobile side-by-side fit
               className="h-8 min-[380px]:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -48,7 +48,7 @@ export default function Navbar() {
                 Handover
               </span>
               <span className="text-[9px] min-[380px]:text-[11px] font-black uppercase tracking-widest leading-none text-[#0F2D81]">
-                Experts
+                Expert
               </span>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
             {/* Social Icons Row */}
             <div className="flex items-center gap-1.5 min-[380px]:gap-2.5 border-r border-[#0F2D81]/15 pr-2 min-[380px]:pr-3">
               {/* Instagram Icon */}
-              <a href="#" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
+              <a href="https://www.instagram.com/handover.expert/" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[15px] h-[15px] min-[380px]:w-[18px] min-[380px]:h-[18px]">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -68,7 +68,7 @@ export default function Navbar() {
               </a>
 
               {/* WhatsApp Icon */}
-              <a href="#" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
+              <a href="https://wa.me/916303363041" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[15px] h-[15px] min-[380px]:w-[18px] min-[380px]:h-[18px]">
                   <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
                   <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -.5 -.5h-1a.5 .5 0 0 0 -.5 .5v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 .5 -.5v-1a.5 .5 0 0 0 -.5 -.5h-1a.5 .5 0 0 0 -.5 .5v.5a4 4 0 0 1 -4 -4v-.5z"></path>
@@ -76,7 +76,7 @@ export default function Navbar() {
               </a>
 
               {/* Call / Phone Icon */}
-              <a href="#" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
+              <a href="tel:+916303363041" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[15px] h-[15px] min-[380px]:w-[18px] min-[380px]:h-[18px]">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
@@ -126,7 +126,7 @@ export default function Navbar() {
           <div className="relative z-10 flex items-center justify-center gap-2.5 group cursor-pointer shrink-0">
             <img
               src="/logo.png"
-              alt="Handover Experts Logo"
+              alt="Handover Expert Logo"
               className="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 pt-1"
             />
             <div className="flex flex-col justify-center items-center gap-1.5">
@@ -134,7 +134,7 @@ export default function Navbar() {
                 Handover
               </span>
               <span className="text-xl font-black uppercase tracking-widest leading-none text-[#0F2D81]">
-                Experts
+                Expert
               </span>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function Navbar() {
           <div className="relative z-10 flex flex-row items-center gap-5">
             
             <div className="flex items-center gap-4 border-r border-[#0F2D81]/15 pr-5 pt-0">
-              <a href="#" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
+              <a href="https://www.instagram.com/handover.expert/" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -163,14 +163,14 @@ export default function Navbar() {
                 </svg>
               </a>
 
-              <a href="#" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
+              <a href="https://wa.me/916303363041" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
                   <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -.5 -.5h-1a.5 .5 0 0 0 -.5 .5v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 .5 -.5v-1a.5 .5 0 0 0 -.5 -.5h-1a.5 .5 0 0 0 -.5 .5v.5a4 4 0 0 1 -4 -4v-.5z"></path>
                 </svg>
               </a>
 
-              <a href="#" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
+              <a href="tel:+916303363041" className="text-[#0F2D81] hover:text-[#EEBD08] transition-colors duration-200">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>

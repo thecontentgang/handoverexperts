@@ -43,7 +43,7 @@ const coverageData = [
   },
   {
     id: 3,
-    title: "Plumbing's Check",
+    title: "Plumbing Check",
     description: "Inspection of all pipes and fittings to ensure zero blockages or leaks.",
     icon: Wrench,
   },
@@ -54,77 +54,78 @@ const coverageData = [
     icon: Droplets,
   },
   {
-    id: 5,
-    title: "Sanitary",
-    description: "Checking bathroom fittings, WCs, and basins for proper installation.",
-    icon: Bath,
-  },
-  {
-    id: 6,
-    title: "Area",
-    description: "Accurate carpet area measurements to ensure you get what you paid for.",
-    icon: Maximize,
-  },
-  {
-    id: 7,
-    title: "Water",
-    description: "Testing water flow pressure and supply lines for everyday reliability.",
-    icon: Droplet,
-  },
-  {
-    id: 8,
-    title: "Air",
-    description: "Evaluating cross-ventilation and exhaust functionality across the home.",
-    icon: Wind,
-  },
-  {
-    id: 9,
-    title: "Hardware",
-    description: "Verifying the quality and smooth operation of locks, hinges, and handles.",
-    icon: Lock,
-  },
-  {
-    id: 10,
-    title: "Doors & Windows",
-    description: "Inspecting frames, glass, and seals for alignment and smooth sliding.",
-    icon: DoorOpen,
-  },
-  {
-    id: 11,
-    title: "Internal Walls",
-    description: "Checking plastering, paint quality, and detecting structural cracks.",
-    icon: Square,
-  },
-  {
-    id: 12,
-    title: "Terrace",
-    description: "Inspecting slopes and drainage on top floors to prevent water pooling.",
-    icon: Sun,
-  },
-  {
-    id: 13,
-    title: "AC Drains",
-    description: "Ensuring proper slope and concealed piping for AC drain lines.",
-    icon: Snowflake,
-  },
-  {
-    id: 14,
-    title: "Balcony & Utility",
-    description: "Checking safety railings, floor slopes, and washing machine provisions.",
-    icon: Layout,
-  },
-  {
     id: 15,
-    title: "Water Proofing",
+    title: "Water Proofing Check",
     description: "Verifying waterproof coatings in wet areas like bathrooms and kitchens.",
     icon: Umbrella,
   },
   {
     id: 16,
-    title: "Dampness",
+    title: "Dampness Check",
     description: "Detecting localized damp patches that could lead to mold and damage.",
     icon: CloudRain,
   },
+  {
+    id: 5,
+    title: "Sanitary Check",
+    description: "Checking bathroom fittings, WCs, and basins for proper installation.",
+    icon: Bath,
+  },
+  {
+    id: 6,
+    title: "Area Check",
+    description: "Accurate carpet area measurements to ensure you get what you paid for.",
+    icon: Maximize,
+  },
+  {
+    id: 7, 
+    title: "Water Check",
+    description: "Testing water flow pressure and supply lines for everyday reliability.",
+    icon: Droplet,
+  },
+  {
+    id: 8,
+    title: "Air Check",
+    description: "Evaluating cross-ventilation and exhaust functionality across the home.",
+    icon: Wind,
+  },
+  {
+    id: 9,
+    title: "Hardware Check",
+    description: "Verifying the quality and smooth operation of locks, hinges, and handles.",
+    icon: Lock,
+  },
+  {
+    id: 10,
+    title: "Doors & Windows Check",
+    description: "Inspecting frames, glass, and seals for alignment and smooth sliding.",
+    icon: DoorOpen,
+  },
+  {
+    id: 11,
+    title: "Internal Walls Check",
+    description: "Checking plastering, paint quality, and detecting structural cracks.",
+    icon: Square,
+  },
+  {
+    id: 12,
+    title: "Terrace Check",
+    description: "Inspecting slopes and drainage on top floors to prevent water pooling.",
+    icon: Sun,
+  },
+  {
+    id: 13,
+    title: "AC Drains Check",
+    description: "Ensuring proper slope and concealed piping for AC drain lines.",
+    icon: Snowflake,
+  },
+  {
+    id: 14,
+    title: "Balcony & Utility Check",
+    description: "Checking safety railings, floor slopes, and washing machine provisions.",
+    icon: Layout,
+  },
+  
 ];
 
 // --- Micro-Animation Variants ---
@@ -157,7 +158,7 @@ export default function InspectionCoverageSection() {
   }, [controls, inView]);
 
   return (
-    <section
+    <section id="inspection"
       ref={ref}
       className="bg-zinc-50 py-16 md:py-24 relative font-sans border-t border-zinc-200"
     >

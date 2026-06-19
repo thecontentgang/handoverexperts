@@ -10,11 +10,11 @@ const colors = {
 
 // --- Data extracted from image_fd6f40.png ---
 const comparisonData = [
-  { parameter: "Inspection Checkpoints", us: "400+ detailed checkpoints", them: "Usually 100-200 checkpoints" },
+  { parameter: "Inspection Checkpoints", us: "SOP based 400+ detailed checkpoints", them: "Usually 100-200 checkpoints" },
   { parameter: "Team Expertise", us: "Trained full-time engineers", them: "Individual freelancers or part-time inspectors" },
-  { parameter: "Inspection Process", us: "Standardized SOP-driven process", them: "Depends on individual inspector" },
+  { parameter: "Inspection Process", us: "Tech Driven SOP-driven process", them: "Depends on individual inspector" },
   { parameter: "Report Quality", us: "Detailed digital report with photos & observations", them: "Basic PDF or checklist report" },
-  { parameter: "Technology Platform", us: "Proprietary HXOXP inspection system", them: "Mostly manual processes" },
+  { parameter: "Technology Platform", us: "Proprietary HXOPS inspection system", them: "Mostly manual processes" },
   { parameter: "Builder Defect Documentation", us: "Structured defect categorization", them: "General observations only" },
   { parameter: "Electrical Testing", us: "Comprehensive testing", them: "Limited testing" },
   { parameter: "Moisture & Seepage Detection", us: "Advanced tools and thermal scanning", them: "Mostly visual checks" },
@@ -30,7 +30,7 @@ const comparisonData = [
 const reviewsData = [
   { id: 1, name: "Rahul Reddy", date: "2 weeks ago", text: "Saved me from buying a flat with hidden seepage issues. The thermal scanning was an eye-opener. Best investment before taking handover!" },
   { id: 2, name: "Sneha Sharma", date: "1 month ago", text: "Highly professional team. The 400+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend." },
-  { id: 3, name: "Vikram K.", date: "3 months ago", text: "Being an NRI, I couldn't be there for the handover. Handover Experts took care of everything and sent a highly detailed digital report. Perfect service." },
+  { id: 3, name: "Vikram K.", date: "3 months ago", text: "Being an NRI, I couldn't be there for the handover. Handover expert took care of everything and sent a highly detailed digital report. Perfect service." },
   { id: 4, name: "Ananya Singh", date: "3 months ago", text: "The team was incredibly thorough. They spent 4 hours inspecting our villa and found things we would have never noticed. The report was easy to read." },
   { id: 5, name: "Mohammed Tariq", date: "4 months ago", text: "Worth every penny! Forced the builder to fix hollow tiles and a major plumbing issue in the master bathroom before we moved in." },
   { id: 6, name: "Priya Desai", date: "5 months ago", text: "I loved their attention to detail. The proprietary software they use generates a beautiful, actionable report with photos for every single defect." },
@@ -129,8 +129,8 @@ export default function WhyChooseUsSection() {
                     </td>
                     <td className="py-4 px-6">
                       <div className="flex items-start gap-3">
-                        <XCircle size={18} className="text-zinc-300 shrink-0 mt-0.5" />
-                        <span className="text-zinc-500 font-medium text-sm leading-snug">{row.them}</span>
+                        <XCircle size={18} className="text-red-300 shrink-0 mt-0.5" />
+                        <span className="text-red-500 font-medium text-sm leading-snug">{row.them}</span>
                       </div>
                     </td>
                   </tr>
