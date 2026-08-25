@@ -12,11 +12,7 @@ import {
 } from "lucide-react";
 import BookingModal from "../components/BookingModal";
 
-const colors = {
-  navy: "#0F2D81",
-  yellow: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 // --- YouTube Video IDs ---
 const youtubeVideoIds = [
@@ -115,8 +111,7 @@ export default function ResultsSection() {
     <>
       <section id="results"
         ref={ref}
-        style={{ backgroundColor: colors.white }}
-        className="py-16 md:py-24 relative font-sans overflow-hidden"
+        className="py-16 md:py-24 relative font-sans overflow-hidden bg-white"
       >
         {/* SEO Crawler Content - Hidden from UI but read by Google */}
         <div className="sr-only">
@@ -142,21 +137,19 @@ export default function ResultsSection() {
           >
             <motion.div
               variants={itemVariants}
-              style={{ backgroundColor: `${colors.navy}15` }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0F2D81]/20"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-navy/20 bg-navy/5"
             >
-              <CheckCircle size={14} style={{ color: colors.navy }} />
-              <span style={{ color: colors.navy }} className="text-xs font-bold tracking-wider uppercase">
+              <CheckCircle size={14} className="text-navy" />
+              <span className="text-xs font-bold tracking-wider uppercase text-navy">
                 Real Results
               </span>
             </motion.div>
             
             <motion.h2
               variants={itemVariants}
-              style={{ color: colors.navy }}
-              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-navy"
             >
-              Watch How We Protect <span style={{ color: colors.yellow }}>Your Home.</span>
+              Watch How We Protect <span className="text-yellow">Your Home.</span>
             </motion.h2>
             
             <motion.p
@@ -207,10 +200,9 @@ export default function ResultsSection() {
               target="_blank"
               rel="noopener noreferrer"
               variants={itemVariants}
-              whileHover={{ scale: 1.05, backgroundColor: colors.navy, color: colors.white }}
-              whileTap={{ scale: 0.96 }}
-              style={{ backgroundColor: colors.yellow, color: colors.navy }}
-              className="px-8 py-3.5 rounded-full font-black text-sm md:text-base uppercase tracking-widest flex items-center gap-3 shadow-[0_10px_20px_rgba(238,189,8,0.25)] transition-colors duration-300"
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-yellow text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
             >
               <Eye size={20} strokeWidth={2.5} />
               View More
@@ -229,15 +221,14 @@ export default function ResultsSection() {
                 key={item.id}
                 variants={itemVariants}
                 whileHover={{ y: -6, boxShadow: "0 20px 40px -15px rgba(15, 45, 129, 0.15)" }}
-                className="bg-white border border-zinc-200 rounded-3xl p-8 transition-all duration-300 shadow-md text-center flex flex-col items-center"
+                className="bg-white border border-navy/10 rounded-3xl p-8 transition-all duration-300 shadow-md text-center flex flex-col items-center"
               >
                 <div 
-                  style={{ backgroundColor: `${colors.yellow}20`, color: colors.yellow }}
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                  className="w-16 h-16 rounded-full flex items-center justify-center mb-6 bg-yellow/20"
                 >
-                  <item.icon size={32} style={{ color: colors.navy }} strokeWidth={2} />
+                  <item.icon size={32} className="text-navy" strokeWidth={2} />
                 </div>
-                <h3 style={{ color: colors.navy }} className="text-xl font-bold tracking-tight mb-3">
+                <h3 className="text-xl font-bold tracking-tight mb-3 text-navy">
                   {item.title}
                 </h3>
                 <p className="text-[15px] text-zinc-600 leading-relaxed">
@@ -257,8 +248,7 @@ export default function ResultsSection() {
             <div className="text-center mb-16 space-y-4">
               <motion.h2 
                 variants={itemVariants}
-                style={{ color: colors.navy }}
-                className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight"
+                className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-navy"
               >
                 Trusted by Hyderabad Homebuyers
               </motion.h2>
@@ -272,7 +262,7 @@ export default function ResultsSection() {
                 <motion.div
                   key={review.id}
                   variants={itemVariants}
-                  className="bg-zinc-50 border border-zinc-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 grow"
+                  className="bg-white border border-navy/10 rounded-3xl p-8 shadow-lg flex flex-col justify-between w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 grow"
                 >
                   <div>
                     <Quote size={28} className="text-zinc-200 mb-4" />
@@ -287,11 +277,11 @@ export default function ResultsSection() {
                   </div>
                   
                   <div className="flex items-center gap-3 pt-4 border-t border-zinc-200/80">
-                    <div style={{ backgroundColor: colors.navy }} className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold bg-navy">
                       {review.name.charAt(0)}
                     </div>
                     <div>
-                      <span style={{ color: colors.navy }} className="font-bold text-sm block">
+                      <span className="font-bold text-sm block text-navy">
                         {review.name}
                       </span>
                       <span className="text-xs text-zinc-500 font-medium">
@@ -304,17 +294,16 @@ export default function ResultsSection() {
             </div>
 
             {/* --- Footer Narrative & CTA --- */}
-            <motion.div variants={itemVariants} className="bg-blue-50 border border-blue-100 rounded-3xl p-8 md:p-12 text-center max-w-5xl mx-auto">
-              <p style={{ color: colors.navy }} className="text-base md:text-lg font-medium leading-relaxed mb-8 max-w-4xl mx-auto">
+            <motion.div variants={itemVariants} className="bg-white border border-navy/10 shadow-lg rounded-3xl p-8 md:p-12 text-center max-w-5xl mx-auto">
+              <p className="text-base md:text-lg font-medium leading-relaxed mb-8 max-w-4xl mx-auto text-navy">
                 This is what home inspection services Hyderabad should feel like from the buyer's side: not a bureaucratic formality, but the one step in the entire property-buying process where someone is working entirely for you. When people search for Handover Expert by name after their inspection, it's usually to tell someone else to book us too — and that, more than any stat on this page, is the reason we keep doing this the way we do.
               </p>
               
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(15,45,129,0.25)" }}
-                whileTap={{ scale: 0.96 }}
+                whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setIsModalOpen(true)}
-                style={{ backgroundColor: colors.navy, color: colors.white }}
-                className="px-6 py-4 sm:px-10 sm:py-5 rounded-2xl font-black text-sm sm:text-base uppercase tracking-widest flex items-center justify-center gap-3 mx-auto transition-all"
+                className="bg-yellow text-navy px-6 py-4 sm:px-10 sm:py-5 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center justify-center gap-3 mx-auto transition-all shadow-md"
               >
                 <CalendarCheck size={22} />
                 Book Your Inspection — Get Your Report in 24 Hours

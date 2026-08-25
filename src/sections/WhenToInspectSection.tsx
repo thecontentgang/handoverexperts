@@ -10,11 +10,7 @@ import {
   AlertCircle
 } from "lucide-react";
 
-const customColors = {
-  deepNavy: "#0F2D81",
-  yellowGold: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 // --- Data for Scenarios ---
 const scenarios = [
@@ -86,14 +82,13 @@ export default function WhenToInspectSection() {
   }, [controls, inView]);
 
   return (
-    <section 
-      id="when-to-inspect"
-      ref={ref}
-      style={{ backgroundColor: customColors.deepNavy }}
-      className="py-24 relative overflow-hidden flex flex-col justify-center items-center text-white"
-    >
+      <section 
+        id="when-to-inspect"
+        ref={ref}
+        className="py-24 relative overflow-hidden flex flex-col justify-center items-center bg-white text-navy"
+      >
       {/* Structural Minimal Grid Background (Consistency with Hero/About) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,45,129,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,45,129,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(238,189,8,0.05),transparent_70%)] pointer-events-none" />
 
       {/* Visually hidden SEO block to ensure every exact word is indexed by Google */}
@@ -119,15 +114,15 @@ export default function WhenToInspectSection() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
           <motion.h2
             variants={fadeInUpVariants}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.15]"
+            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.15] text-navy"
           >
             When Should You Get a <br className="hidden sm:block" />
-            <span style={{ color: customColors.yellowGold }}>Home Inspection?</span>
+            <span className="text-yellow">Home Inspection?</span>
           </motion.h2>
           
           <motion.p
             variants={fadeInUpVariants}
-            className="text-base md:text-lg text-zinc-300 font-medium leading-relaxed"
+            className="text-base md:text-lg text-zinc-600 font-medium leading-relaxed"
           >
             Here's a myth worth killing early: home inspections aren't just for new construction. The honest answer depends on where you are in your property journey.
           </motion.p>
@@ -139,21 +134,20 @@ export default function WhenToInspectSection() {
             <motion.div
               key={scenario.id}
               variants={fadeInUpVariants}
-              whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.08)" }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm transition-all duration-300 flex flex-col h-full"
+              whileHover={{ y: -5, borderColor: "rgba(15, 45, 129, 0.3)", boxShadow: "0 10px 25px -5px rgba(15,45,129,0.1)" }}
+              className="bg-white border border-navy/10 shadow-lg rounded-3xl p-8 transition-all duration-300 flex flex-col h-full"
             >
               <div 
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                style={{ backgroundColor: "rgba(238,189,8,0.15)", border: `1px solid ${customColors.yellowGold}40` }}
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm bg-yellow/15 border border-yellow/40"
               >
-                <scenario.icon size={26} style={{ color: customColors.yellowGold }} />
+                <scenario.icon size={26} className="text-yellow" />
               </div>
               
-              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-3">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-navy mb-3">
                 {scenario.title}
               </h3>
               
-              <p className="text-sm sm:text-[15px] text-zinc-400 leading-relaxed flex-grow">
+              <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed flex-grow">
                 {scenario.description}
               </p>
             </motion.div>
@@ -163,13 +157,13 @@ export default function WhenToInspectSection() {
         {/* --- Footer / Conclusion --- */}
         <motion.div
           variants={fadeInUpVariants}
-          className="mt-16 sm:mt-20 flex flex-col md:flex-row items-center justify-center gap-4 bg-white/5 border border-white/10 p-6 sm:p-8 rounded-2xl md:rounded-full text-center md:text-left backdrop-blur-md"
+          className="mt-16 sm:mt-20 flex flex-col md:flex-row items-center justify-center gap-4 bg-navy/5 border border-navy/10 p-6 sm:p-8 rounded-2xl md:rounded-full text-center md:text-left backdrop-blur-md"
         >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full shrink-0" style={{ backgroundColor: customColors.yellowGold }}>
-            <AlertCircle size={24} style={{ color: customColors.deepNavy }} strokeWidth={2.5} />
+          <div className="flex items-center justify-center w-12 h-12 rounded-full shrink-0 bg-yellow">
+            <AlertCircle size={24} className="text-navy" strokeWidth={2.5} />
           </div>
-          <p className="text-base sm:text-lg font-medium text-white max-w-2xl">
-            The pattern across every single one of these scenarios is simple: <span style={{ color: customColors.yellowGold }}>an inspection works best before you sign</span>, not after you've already committed.
+          <p className="text-base sm:text-lg font-medium text-navy max-w-2xl">
+            The pattern across every single one of these scenarios is simple: <span className="text-yellow font-bold">an inspection works best before you sign</span>, not after you've already committed.
           </p>
         </motion.div>
         

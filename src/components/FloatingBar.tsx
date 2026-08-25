@@ -26,9 +26,9 @@ export default function FloatingContactButton() {
   const actions = [
   
     {
-      icon: <Phone size={24} strokeWidth={2.5} />,
+      icon: <Phone size={24} className="text-navy" strokeWidth={2.5} />,
       label: "Call Us",
-      color: colors.navy,
+      color: colors.yellow,
       href: "tel:+916303363041",
     },
     {

@@ -1,11 +1,6 @@
 import { motion, useAnimation, useInView, type Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const customColors = {
-  deepNavy: "#0F2D81",   // Background Color
-  yellowGold: "#EEBD08", // Accent & Highlight Color
-};
-
 // Framer Motion Animation Variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -39,11 +34,10 @@ export default function AboutSection() {
     <>
       <div id="about"
         ref={ref}
-        style={{ backgroundColor: customColors.deepNavy }}
-        className="min-h-screen text-white py-20 relative overflow-hidden flex flex-col justify-start items-center"
+        className="min-h-screen bg-white text-navy py-20 relative overflow-hidden flex flex-col justify-start items-center"
       >
         {/* Structural Minimal Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,45,129,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,45,129,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(238,189,8,0.06),transparent_60%)] pointer-events-none" />
 
         {/* Visually hidden SEO block to ensure every exact word is indexed by Google */}
@@ -63,12 +57,11 @@ export default function AboutSection() {
         >
           {/* Centered Headline with Underline */}
           <motion.div variants={fadeInUpVariants} className="flex flex-col items-center mb-16">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white text-center">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-navy text-center">
               Engineer-Led Home Inspection
             </h2>
             <div 
-              style={{ backgroundColor: customColors.yellowGold }}
-              className="h-1 sm:h-1.5 w-16 sm:w-24 mt-4 sm:mt-6 rounded-full"
+              className="bg-yellow h-1 sm:h-1.5 w-16 sm:w-24 mt-4 sm:mt-6 rounded-full"
             />
           </motion.div>
 
@@ -78,45 +71,45 @@ export default function AboutSection() {
             className="w-full flex flex-row justify-between items-center gap-2 sm:gap-6 md:gap-8 px-4 mb-20 z-10 relative"
           >
             {/* Edge fade gradients (as seen in image) */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#0F2D81] to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#0F2D81] to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
             {/* Homes Checked (Outer Left - Lowest in Arc) */}
             <div className="flex-1 text-center translate-y-5 sm:translate-y-8 md:translate-y-10 opacity-70">
-              <h3 style={{ color: customColors.yellowGold }} className="text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
                 10K+
               </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-white/90">
+              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Homes Checked
               </p>
             </div>
 
             {/* Defects Found (Inner Left - Higher in Arc) */}
             <div className="flex-1 text-center">
-              <h3 style={{ color: customColors.yellowGold }} className="text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
                 40K+
               </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-white/90">
+              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Defects Found
               </p>
             </div>
 
             {/* Google Reviews (Inner Right - Higher in Arc) */}
             <div className="flex-1 text-center">
-              <h3 style={{ color: customColors.yellowGold }} className="text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
                 1K+
               </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-white/90">
+              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Google Reviews
               </p>
             </div>
 
             {/* Followers (Outer Right - Lowest in Arc) */}
             <div className="flex-1 text-center translate-y-5 sm:translate-y-8 md:translate-y-10 opacity-70">
-              <h3 style={{ color: customColors.yellowGold }} className="text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
                 58K+
               </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-white/90">
+              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Followers
               </p>
             </div>
@@ -125,21 +118,21 @@ export default function AboutSection() {
           {/* Centered Paragraph Text */}
           <motion.div
             variants={fadeInUpVariants}
-            className="max-w-4xl w-full text-center text-sm sm:text-base md:text-[17px] text-zinc-300 font-normal leading-relaxed space-y-6"
+            className="max-w-4xl w-full text-center text-sm sm:text-base md:text-[17px] text-zinc-600 font-normal leading-relaxed space-y-6"
           >
             <p>
-              Numbers only mean something if they translate into trust so here's the honest version. Over <strong className="text-white">10,000 homes inspected</strong> across Hyderabad. Over <strong className="text-white">40,000 individual defects caught</strong> before buyers took possession defects that would otherwise have become their expense, not the builder's. And a track record built by full-time, trained engineers, not freelancers working off a printed checklist.
+              Numbers only mean something if they translate into trust so here's the honest version. Over <strong className="text-navy">10,000 homes inspected</strong> across Hyderabad. Over <strong className="text-navy">40,000 individual defects caught</strong> before buyers took possession defects that would otherwise have become their expense, not the builder's. And a track record built by full-time, trained engineers, not freelancers working off a printed checklist.
             </p>
             
             <p>
-              This is why Handover Expert consistently comes up when people search for the best home inspection services in Hyderabad. We don't chase the label of best home inspection company near me we've earned it the slow way, one inspected home at a time. If you're comparing quality home inspection services before booking anyone, ask this one question: how many homes has this team actually inspected, and can they show you the reports? <strong style={{ color: customColors.yellowGold }}>We can.</strong>
+              This is why Handover Expert consistently comes up when people search for the best home inspection services in Hyderabad. We don't chase the label of best home inspection company near me we've earned it the slow way, one inspected home at a time. If you're comparing quality home inspection services before booking anyone, ask this one question: how many homes has this team actually inspected, and can they show you the reports? <strong className="text-yellow">We can.</strong>
             </p>
 
             {/* Divider Line */}
-            <div className="w-full max-w-3xl mx-auto h-[1px] bg-white/10 my-8 md:my-10"></div>
+            <div className="w-full max-w-3xl mx-auto h-[1px] bg-navy/10 my-8 md:my-10"></div>
 
             <p>
-              Handover Expert stands as one of the few names offering genuinely total home inspection services in the city covering residential and commercial, new construction and resale, all under one standardized <strong style={{ color: customColors.yellowGold }}>400+ point process.</strong>
+              Handover Expert stands as one of the few names offering genuinely total home inspection services in the city covering residential and commercial, new construction and resale, all under one standardized <strong className="text-yellow">400+ point process.</strong>
             </p>
           </motion.div>
         </motion.div>

@@ -42,12 +42,11 @@ export default function HeroSection() {
     <>
       <div
         ref={ref}
-        style={{ backgroundColor: customColors.deepNavy }}
-        className="h-[100dvh] text-white relative overflow-hidden flex flex-col justify-center items-center px-4"
+        className="h-[100dvh] bg-white text-navy relative overflow-hidden flex flex-col justify-center items-center px-4"
       >
         {/* Structural Minimal Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(238,189,8,0.07),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,45,129,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,45,129,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(238,189,8,0.1),transparent_60%)] pointer-events-none" />
 
         {/* SEO / Crawler Content (Visually hidden but read by Google) */}
         <div className="sr-only">
@@ -128,10 +127,10 @@ export default function HeroSection() {
           {/* Location Badge */}
           <motion.div
             variants={fadeInUpVariants}
-            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 md:px-5 md:py-1 rounded-full backdrop-blur-md shadow-xs"
+            className="inline-flex items-center gap-2 bg-navy/5 border border-navy/10 px-4 py-1.5 md:px-5 md:py-1 rounded-full backdrop-blur-md shadow-xs"
           >
             <MapPin size={16} style={{ color: customColors.yellowGold }} />
-            <h1 className="text-xs md:text-sm font-bold tracking-wider text-zinc-300 uppercase">
+            <h1 className="text-xs md:text-sm font-bold tracking-wider text-zinc-600 uppercase">
               Home Inspection services in Hyderabad
             </h1>
           </motion.div>
@@ -140,12 +139,12 @@ export default function HeroSection() {
           <div className="space-y-4 md:space-y-2 w-full">
             <motion.h2
               variants={fadeInUpVariants}
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-[4.5rem] font-black tracking-tight leading-[1.1] text-white"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-[4.5rem] font-black tracking-tight leading-[1.1] text-navy"
             >
               Find Hidden House Defects
               <br className="hidden sm:block" />
               Before You{" "}
-              <span style={{ color: customColors.yellowGold }} className="inline-block mt-1 sm:mt-0">
+              <span className="text-yellow inline-block mt-1 sm:mt-0">
                 Take Handover.
               </span>
             </motion.h2>
@@ -153,7 +152,7 @@ export default function HeroSection() {
             {/* Description Updated Based on New Copy */}
             <motion.p
               variants={fadeInUpVariants}
-              className="text-sm sm:text-base md:text-xl lg:text-xl text-zinc-300 max-w-2xl lg:max-w-4xl mx-auto font-normal leading-relaxed px-2"
+              className="text-sm sm:text-base md:text-xl lg:text-xl text-zinc-600 max-w-2xl lg:max-w-4xl mx-auto font-normal leading-relaxed px-2"
             >
               Don't take possession on trust alone. We run a comprehensive 400+ point inspection uncovering what builders don't tell you and hand you a clear digital report within 24 hours.
             </motion.p>
@@ -165,27 +164,23 @@ export default function HeroSection() {
             className="flex flex-row gap-2 sm:gap-4 justify-center items-center w-full pt-4 md:pt-6"
           >
             <motion.button
-              whileHover={{ y: -2, boxShadow: "0 15px 30px -10px rgba(238,189,8,0.35)" }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setIsModalOpen(true)}
-              style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-              className="flex-1 sm:flex-none font-extrabold px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-[10px] sm:text-sm md:text-base tracking-wider uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
+              className="flex-1 sm:flex-none bg-yellow text-navy font-black px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
             >
               Book My Inspection
             </motion.button>
 
             <motion.button
-              whileHover={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                borderColor: customColors.yellowGold,
-              }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
               whileTap={{ scale: 0.98 }}
               onClick={() => {
                 if (window.innerWidth < 640) {
                   window.location.href = "tel:+916303363041";
                 }
               }}
-              className="flex-1 sm:flex-none bg-transparent border border-white/20 text-white font-bold px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-[10px] sm:text-sm md:text-base tracking-wider uppercase transition-all flex items-center justify-center backdrop-blur-xs text-center leading-tight"
+              className="flex-1 sm:flex-none bg-yellow text-navy font-black px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
             >
               <span className="sm:hidden">
                 Talk to Expert

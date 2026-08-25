@@ -13,11 +13,7 @@ import {
   ArrowRight
 } from "lucide-react";
 
-const customColors = {
-  deepNavy: "#0F2D81",
-  yellowGold: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 // --- Data extracted from original snippet ---
 const comparisonData = [
@@ -68,11 +64,10 @@ export default function WhyChooseUsSection() {
       <section 
         id="comparison"
         ref={ref} 
-        style={{ backgroundColor: customColors.deepNavy }} 
-        className="py-16 md:py-24 font-sans overflow-hidden text-white"
+        className="py-16 md:py-24 font-sans overflow-hidden bg-white text-navy"
       >
         {/* Structural Minimal Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,45,129,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,45,129,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(238,189,8,0.06),transparent_60%)] pointer-events-none" />
 
         {/* Visually hidden SEO block to ensure every exact word is indexed by Google */}
@@ -104,27 +99,27 @@ export default function WhyChooseUsSection() {
 
         {/* 1. THE IMPACT BANNER */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-20 relative z-20">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-            className="rounded-3xl p-8 sm:p-12 md:p-16 text-center relative shadow-2xl flex flex-col items-center justify-center overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm"
-          >
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_50%_50%,#EEBD08_0%,transparent_60%)] pointer-events-none" />
-            
-            <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6 relative z-10 text-white/50">
-              <Building2 size={32} />
-              <span className="w-12 h-[1px] bg-white/20"></span>
-              <Home size={28} />
-            </motion.div>
-
-            <motion.h2 
-              variants={itemVariants}
-              className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight leading-tight max-w-4xl relative z-10"
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate={controls}
+              className="rounded-3xl p-8 sm:p-12 md:p-16 text-center relative shadow-xl flex flex-col items-center justify-center overflow-hidden border border-navy/10 bg-white backdrop-blur-sm"
             >
-              From <span style={{ color: customColors.yellowGold }}>1000 Cr luxury properties</span> to small standalone apartments, we have inspected them all.
-            </motion.h2>
-          </motion.div>
+              <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_50%_50%,#EEBD08_0%,transparent_60%)] pointer-events-none" />
+              
+              <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6 relative z-10 text-navy/50">
+                <Building2 size={32} />
+                <span className="w-12 h-[1px] bg-navy/20"></span>
+                <Home size={28} />
+              </motion.div>
+
+              <motion.h2 
+                variants={itemVariants}
+                className="text-2xl sm:text-3xl md:text-5xl font-black text-navy tracking-tight leading-tight max-w-4xl relative z-10"
+              >
+                From <span className="text-yellow">1000 Cr luxury properties</span> to small standalone apartments, we have inspected them all.
+              </motion.h2>
+            </motion.div>
         </div>
 
         {/* 2. THE COMPARISON TABLE */}
@@ -132,50 +127,50 @@ export default function WhyChooseUsSection() {
           <motion.div variants={containerVariants} initial="hidden" animate={controls} className="text-center mb-10 space-y-6">
             <motion.h3 
               variants={itemVariants} 
-              className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.15]"
+              className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.15] text-navy"
             >
               Handover Expert vs <br className="hidden sm:block" />
-              <span style={{ color: customColors.yellowGold }}>Local Inspectors in Hyderabad</span>
+              <span className="text-yellow">Local Inspectors in Hyderabad</span>
             </motion.h3>
-            <motion.p variants={itemVariants} className="text-base md:text-lg text-zinc-300 max-w-3xl mx-auto font-medium leading-relaxed">
+            <motion.p variants={itemVariants} className="text-base md:text-lg text-zinc-600 max-w-3xl mx-auto font-medium leading-relaxed">
               See exactly why thousands of homebuyers trust us over freelancers and basic checklist services — this comparison isn't marketing spin, it's the actual operational difference:
             </motion.p>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="mb-16 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-2xl">
+          <motion.div variants={itemVariants} className="mb-16 rounded-3xl border border-navy/10 bg-white backdrop-blur-sm overflow-hidden shadow-xl">
             <div className="overflow-x-auto">
               <table className="w-full text-left min-w-[800px] border-collapse">
                 <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="p-6 text-sm md:text-base font-bold text-zinc-400 w-[25%] uppercase tracking-wider">
+                  <tr className="border-b border-navy/10">
+                    <th className="p-6 text-sm md:text-base font-bold text-zinc-600 w-[25%] uppercase tracking-wider">
                       Parameter
                     </th>
-                    <th className="p-6 text-lg md:text-xl font-black w-[40%] bg-white/5 border-l border-r border-white/10 shadow-[inset_0_4px_0_#EEBD08]">
+                    <th className="p-6 text-lg md:text-xl font-black w-[40%] bg-zinc-50 border-l border-r border-navy/10 shadow-[inset_0_4px_0_#EEBD08] text-navy">
                       Handover Expert
                     </th>
-                    <th className="p-6 text-sm md:text-base font-bold text-zinc-400 w-[35%] uppercase tracking-wider">
+                    <th className="p-6 text-sm md:text-base font-bold text-zinc-600 w-[35%] uppercase tracking-wider">
                       Typical Competitors / Freelancers
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/10">
+                <tbody className="divide-y divide-navy/10">
                   {comparisonData.map((row, index) => (
-                    <tr key={index} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="p-6 text-sm md:text-base font-semibold text-white/90 align-top">
+                    <tr key={index} className="hover:bg-zinc-50 transition-colors">
+                      <td className="p-6 text-sm md:text-base font-semibold text-navy/90 align-top">
                         {row.parameter}
                       </td>
-                      <td className="p-6 align-top bg-white/5 border-l border-r border-white/10">
+                      <td className="p-6 align-top bg-zinc-50 border-l border-r border-navy/10">
                         <div className="flex items-start gap-3">
-                          <CheckCircle2 size={20} className="mt-0.5 shrink-0" style={{ color: customColors.yellowGold }} />
-                          <span className="text-base font-bold text-white leading-snug">
+                          <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-yellow" />
+                          <span className="text-base font-bold text-navy leading-snug">
                             {row.us}
                           </span>
                         </div>
                       </td>
                       <td className="p-6 align-top">
-                        <div className="flex items-start gap-3 opacity-60">
+                        <div className="flex items-start gap-3 opacity-80 text-zinc-600">
                           <XCircle size={20} className="mt-0.5 shrink-0" />
-                          <span className="text-base font-medium text-white leading-snug">
+                          <span className="text-base font-medium leading-snug">
                             {row.them}
                           </span>
                         </div>
@@ -192,15 +187,15 @@ export default function WhyChooseUsSection() {
             variants={itemVariants}
             className="max-w-4xl mx-auto space-y-6 text-center"
           >
-            <div className="inline-flex justify-center items-center w-12 h-12 rounded-full bg-white/10 mb-2">
-              <ShieldAlert size={24} style={{ color: customColors.yellowGold }} />
+            <div className="inline-flex justify-center items-center w-12 h-12 rounded-full bg-navy/5 mb-2">
+              <ShieldAlert size={24} className="text-yellow" />
             </div>
             
-            <p className="text-base md:text-lg text-zinc-300 font-medium leading-relaxed">
-              If you're weighing affordable home inspection services against a cheaper local freelancer, ask one question before you decide: <strong className="text-white">will they still pick up the phone if a builder disputes their findings three weeks later?</strong> A company with full-time engineers and internal report review will. A freelancer, more often than not, has already moved on to the next job.
+            <p className="text-base md:text-lg text-zinc-600 font-medium leading-relaxed">
+              If you're weighing affordable home inspection services against a cheaper local freelancer, ask one question before you decide: <strong className="text-navy">will they still pick up the phone if a builder disputes their findings three weeks later?</strong> A company with full-time engineers and internal report review will. A freelancer, more often than not, has already moved on to the next job.
             </p>
             
-            <p className="text-base md:text-lg text-white font-bold leading-relaxed">
+            <p className="text-base md:text-lg text-navy font-bold leading-relaxed">
               When you're ready to book home inspection service with a team that treats every inspection like it's protecting their own reputation — not just filling a slot — that's exactly what you get here.
             </p>
           </motion.div>
@@ -211,11 +206,10 @@ export default function WhyChooseUsSection() {
             className="mt-12 flex justify-center"
           >
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(238,189,8,0.3)" }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setIsModalOpen(true)}
-              style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-              className="px-6 py-4 sm:px-8 sm:py-5 rounded-2xl font-black text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 transition-all"
+              className="bg-yellow text-navy px-6 py-4 sm:px-8 sm:py-5 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
             >
               <CalendarCheck size={22} />
               Book Home Inspection Service Today

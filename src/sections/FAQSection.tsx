@@ -2,11 +2,7 @@ import { motion, AnimatePresence, useAnimation, useInView, type Variants } from 
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, MessageCircleQuestion } from "lucide-react";
 
-const colors = {
-  navy: "#0F2D81",
-  yellow: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 // --- FAQ Data ---
 const faqData = [
@@ -85,8 +81,7 @@ export default function FAQSection() {
     <section 
       id="faq"
       ref={ref}
-      style={{ backgroundColor: colors.white }}
-      className="py-24 relative font-sans overflow-hidden"
+      className="py-24 relative font-sans overflow-hidden bg-white"
     >
       {/* SEO Crawler Content - Hidden from UI but read by Google */}
       <div className="sr-only">
@@ -110,16 +105,14 @@ export default function FAQSection() {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4"
-            style={{ backgroundColor: `${colors.yellow}20`, color: colors.navy }}
+            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4 bg-yellow/20 text-navy"
           >
             <MessageCircleQuestion size={28} strokeWidth={2.5} />
           </motion.div>
           
           <motion.h2
             variants={itemVariants}
-            style={{ color: colors.navy }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-navy"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -147,7 +140,7 @@ export default function FAQSection() {
                 key={faq.id} 
                 variants={itemVariants}
                 className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${
-                  isOpen ? "border-[#0F2D81]/20 bg-blue-50/30 shadow-sm" : "border-zinc-200 bg-white hover:bg-zinc-50"
+                  isOpen ? "border-navy/20 bg-navy/5 shadow-sm" : "border-navy/10 bg-white hover:bg-zinc-50"
                 }`}
               >
                 <button
@@ -156,17 +149,16 @@ export default function FAQSection() {
                   aria-expanded={isOpen}
                 >
                   <span 
-                    style={{ color: colors.navy }}
-                    className="text-[17px] sm:text-lg font-bold pr-6 leading-snug"
+                    className="text-navy text-[17px] sm:text-lg font-bold pr-6 leading-snug"
                   >
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#0F2D81]/5"
+                    className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-navy/5"
                   >
-                    <ChevronDown size={20} style={{ color: colors.navy }} />
+                    <ChevronDown size={20} className="text-navy" />
                   </motion.div>
                 </button>
                 

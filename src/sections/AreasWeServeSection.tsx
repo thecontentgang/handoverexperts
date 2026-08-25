@@ -2,11 +2,7 @@ import { motion, useAnimation, useInView, type Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { MapPin, CheckCircle2, ShieldCheck } from "lucide-react";
 
-const colors = {
-  navy: "#0F2D81",
-  yellow: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 const locations = [
   "Gachibowli",
@@ -52,8 +48,7 @@ export default function AreasWeServeSection() {
     <section 
       id="areas-we-serve"
       ref={ref}
-      style={{ backgroundColor: colors.white }}
-      className="py-24 relative font-sans overflow-hidden"
+      className="py-24 relative font-sans overflow-hidden bg-white"
     >
       {/* SEO Crawler Content - Hidden from UI but read by Google */}
       <div className="sr-only">
@@ -75,18 +70,17 @@ export default function AreasWeServeSection() {
         >
           <motion.div
             variants={cardVariants}
-            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full shadow-xs"
+            className="inline-flex items-center gap-2 bg-navy/5 border border-navy/10 px-4 py-1.5 rounded-full shadow-xs"
           >
-            <MapPin size={16} style={{ color: colors.navy }} />
-            <span className="text-xs font-bold tracking-wider uppercase" style={{ color: colors.navy }}>
+            <MapPin size={16} className="text-navy" />
+            <span className="text-xs font-bold tracking-wider uppercase text-navy">
               Local Expertise
             </span>
           </motion.div>
 
           <motion.h2
             variants={cardVariants}
-            style={{ color: colors.navy }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-navy"
           >
             Areas We Serve in Hyderabad
           </motion.h2>
@@ -111,14 +105,12 @@ export default function AreasWeServeSection() {
               key={index}
               variants={cardVariants}
               whileHover={{ y: -4, scale: 1.02 }}
-              style={{ backgroundColor: colors.navy, color: colors.white }}
-              className="p-5 rounded-2xl flex items-center gap-3 shadow-lg transition-all duration-300 group"
+              className="bg-white border border-navy/10 text-navy p-5 rounded-2xl flex items-center gap-3 shadow-lg hover:border-navy transition-all duration-300 group"
             >
               <div 
-                style={{ backgroundColor: colors.yellow }}
-                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:rotate-12"
+                className="bg-yellow w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:rotate-12"
               >
-                <MapPin size={20} style={{ color: colors.navy }} />
+                <MapPin size={20} className="text-navy" />
               </div>
               <span className="font-bold text-sm sm:text-base tracking-tight truncate">
                 {loc}
@@ -136,13 +128,13 @@ export default function AreasWeServeSection() {
         >
           <motion.div 
             variants={cardVariants}
-            className="bg-zinc-50 border border-zinc-200 p-8 rounded-3xl space-y-4 flex flex-col justify-between"
+            className="bg-white border border-navy/10 shadow-lg p-8 rounded-3xl space-y-4 flex flex-col justify-between"
           >
             <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center">
-                <CheckCircle2 size={24} style={{ color: colors.navy }} />
+              <div className="w-12 h-12 rounded-2xl bg-navy/5 flex items-center justify-center">
+                <CheckCircle2 size={24} className="text-navy" />
               </div>
-              <h3 className="text-xl font-bold tracking-tight" style={{ color: colors.navy }}>
+              <h3 className="text-xl font-bold tracking-tight text-navy">
                 No Waiting for Special Arrangements
               </h3>
               <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
@@ -153,13 +145,13 @@ export default function AreasWeServeSection() {
 
           <motion.div 
             variants={cardVariants}
-            className="bg-zinc-50 border border-zinc-200 p-8 rounded-3xl space-y-4 flex flex-col justify-between"
+            className="bg-white border border-navy/10 shadow-lg p-8 rounded-3xl space-y-4 flex flex-col justify-between"
           >
             <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center">
-                <ShieldCheck size={24} style={{ color: colors.navy }} />
+              <div className="w-12 h-12 rounded-2xl bg-yellow/15 flex items-center justify-center">
+                <ShieldCheck size={24} className="text-navy" />
               </div>
-              <h3 className="text-xl font-bold tracking-tight" style={{ color: colors.navy }}>
+              <h3 className="text-xl font-bold tracking-tight text-navy">
                 True Local Presence vs. One-Off Visits
               </h3>
               <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">

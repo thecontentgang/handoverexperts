@@ -21,11 +21,7 @@ import {
   PhoneCall
 } from "lucide-react";
 
-const colors = {
-  navy: "#0F2D81",
-  yellow: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 // --- Comprehensive Inspection Content Data ---
 const coverageData = [
@@ -160,7 +156,7 @@ export default function InspectionCoverageSection() {
   return (
     <section id="inspection"
       ref={ref}
-      className="bg-zinc-50 py-16 md:py-24 relative font-sans border-t border-zinc-200"
+      className="bg-white py-16 md:py-24 relative font-sans border-t border-zinc-200"
     >
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 relative z-10">
 
@@ -173,19 +169,17 @@ export default function InspectionCoverageSection() {
         >
           <motion.div
             variants={itemVariants}
-            style={{ backgroundColor: `${colors.navy}15` }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0F2D81]/20"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-navy/20 bg-navy/5"
           >
-            <CheckCircle size={14} style={{ color: colors.navy }} />
-            <span style={{ color: colors.navy }} className="text-xs font-bold tracking-wider uppercase">
+            <CheckCircle size={14} className="text-navy" />
+            <span className="text-navy text-xs font-bold tracking-wider uppercase">
               Inside Our Inspections
             </span>
           </motion.div>
 
           <motion.h2
             variants={itemVariants}
-            style={{ color: colors.navy }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-navy"
           >
             What's Included in Our 400+ Point Checklist
           </motion.h2>
@@ -214,30 +208,27 @@ export default function InspectionCoverageSection() {
             >
               {/* The core Yellow Box */}
               <div
-                style={{ backgroundColor: colors.yellow }}
-                className="relative p-5 sm:p-6 flex flex-row items-start justify-between gap-4 flex-grow z-10 rounded-2xl"
+                className="bg-yellow relative p-5 sm:p-6 flex flex-row items-start justify-between gap-4 flex-grow z-10 rounded-2xl"
               >
 
                 {/* Left Side: Navy Text Content */}
                 <div className="flex flex-col flex-grow">
-                  <h3 style={{ color: colors.navy }} className="text-lg sm:text-xl font-bold tracking-tight mb-2">
+                  <h3 className="text-navy text-lg sm:text-xl font-bold tracking-tight mb-2">
                     {item.title}
                   </h3>
 
-                  <p style={{ color: colors.navy }} className="text-sm leading-relaxed mb-0 font-medium opacity-90">
+                  <p className="text-navy text-sm leading-relaxed mb-0 font-medium opacity-90">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Right Side: Navy Icon Container */}
                 <div
-                  style={{ backgroundColor: colors.navy }}
-                  // Removed scale hover effect
-                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-md"
+                  className="bg-navy w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-md"
                 >
                   <item.icon
                     size={22}
-                    style={{ color: colors.yellow }}
+                    className="text-yellow"
                     strokeWidth={2.5}
                   />
                 </div>
@@ -252,23 +243,22 @@ export default function InspectionCoverageSection() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          style={{ backgroundColor: colors.navy }}
-          className="w-full max-w-6xl mx-auto rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10"
+          className="w-full max-w-6xl mx-auto rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl border border-navy/10 bg-white relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10"
         >
           {/* Subtle Background Accent for the banner */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-navy opacity-5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3" />
 
           <div className="lg:max-w-2xl text-center lg:text-left relative z-10">
             <motion.div variants={itemVariants} className="space-y-2 mb-6">
-              <h3 style={{ color: colors.yellow }} className="text-xs font-bold tracking-widest uppercase">
+              <h3 className="text-yellow text-xs font-bold tracking-widest uppercase">
                 400+ Inspection Points Covered
               </h3>
-              <h4 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+              <h4 className="text-3xl md:text-4xl font-black text-navy tracking-tight">
                 Professional Home Inspection You Can Trust.
               </h4>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="text-zinc-300 text-[15px] md:text-base leading-relaxed">
+            <motion.p variants={itemVariants} className="text-zinc-600 text-[15px] md:text-base leading-relaxed">
               Our experts bring years of real on-site experience to check every part of your property with accuracy and care. With clear reports and honest guidance, we help you avoid future repair costs and protect your investment.
             </motion.p>
           </div>
@@ -276,11 +266,10 @@ export default function InspectionCoverageSection() {
           {/* CTA Button */}
           <motion.div variants={itemVariants} className="shrink-0 relative z-10">
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(238,189,8,0.25)" }}
-              whileTap={{ scale: 0.96 }}
-              style={{ backgroundColor: colors.yellow, color: colors.navy }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => window.location.href = "tel:6303363041"}
-              className="px-8 py-4 rounded-2xl font-black text-sm md:text-base uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
+              className="bg-yellow text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
             >
               <PhoneCall size={20} strokeWidth={2.5} />
               Get in Touch

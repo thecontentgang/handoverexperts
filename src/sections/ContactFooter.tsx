@@ -2,41 +2,11 @@ import { motion, useAnimation, useInView, type Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   CheckCircle,
-  MapPin,
-  PhoneCall,
   Mail,
   CalendarDays,
 } from "lucide-react";
 // Adjust the import path based on your folder structure
 import BookingModal from "../components/BookingModal";
-
-const colors = {
-  navy: "#0F2D81",
-  yellow: "#EEBD08",
-  white: "#FFFFFF",
-};
-
-// --- Custom SVG Social Icons ---
-const InstagramIcon = ({ size = 20 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-  </svg>
-);
-
-const YoutubeIcon = ({ size = 20 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-  </svg>
-);
-
-const FacebookIcon = ({ size = 20 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-  </svg>
-);
 
 // --- Framer Motion Variants ---
 const containerVariants: Variants = {
@@ -74,8 +44,7 @@ export default function ContactFooterSection() {
     <>
       <section
         ref={ref}
-        style={{ backgroundColor: colors.navy }}
-        className="pt-24 pb-8 relative font-sans text-white overflow-hidden drop-shadow-[0_-10px_30px_rgba(15,45,129,0.22)]"
+        className="pt-24 pb-8 relative font-sans text-navy bg-white overflow-hidden drop-shadow-[0_-10px_30px_rgba(15,45,129,0.05)]"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
 
@@ -88,91 +57,68 @@ export default function ContactFooterSection() {
           >
             <motion.div
               variants={itemVariants}
-              style={{ backgroundColor: `${colors.white}10` }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-md shadow-xs"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-navy/20 bg-navy/5 shadow-xs"
             >
-              <CheckCircle size={14} style={{ color: colors.yellow }} />
-              <span className="text-xs font-bold tracking-wider text-zinc-200 uppercase">
+              <CheckCircle size={14} className="text-navy" />
+              <span className="text-xs font-bold tracking-wider text-navy uppercase">
                 Get In Touch
               </span>
             </motion.div>
 
             <motion.h2
               variants={itemVariants}
-              className="text-4xl sm:text-5xl font-black tracking-tight leading-tight"
+              className="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-navy"
             >
-              Ready to book your <span style={{ color: colors.yellow }}>inspection?</span>
+              Ready to book your <span className="text-[#EEBD08]">inspection?</span>
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-zinc-300 leading-relaxed font-medium"
+              className="text-base md:text-lg text-zinc-600 leading-relaxed font-medium"
             >
               Reach out to us directly or click below to schedule your inspection. Our team is ready to help you secure your new home with confidence.
             </motion.p>
           </motion.div>
 
           {/* --- Contact Layout --- */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-20 items-center">
 
             {/* Left Column: Brand & Contact Info */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate={controls}
-              className="lg:col-span-5 flex flex-col gap-8"
+              className="lg:col-span-5 flex flex-col gap-10"
             >
               {/* Brand Logo (Mirrors Navbar exactly) */}
-              <motion.div variants={itemVariants} className="flex items-center gap-3.5 group cursor-pointer shrink-0 mb-4">
+              <motion.div variants={itemVariants} className="flex items-center gap-3.5 group cursor-pointer shrink-0">
                 <img
                   src="/handover-expert-logo.png"
                   alt="Handover expert Logo"
                   className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-
               </motion.div>
 
               {/* Info Cards */}
               {[
-                { icon: PhoneCall, title: "Call Us", detail: "+91 63033 63041" },
                 { icon: Mail, title: "Email Us", detail: "sushmitha@handoverexpert.com" },
-                { icon: MapPin, title: "Visit Us", detail: "Asian Suncity, Hyderabad, India" },
               ].map((info, idx) => (
                 <motion.div key={idx} variants={itemVariants} className="flex items-center gap-5 group cursor-pointer">
                   <div
-                    style={{ backgroundColor: colors.yellow }}
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    className="bg-[#EEBD08] w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
                   >
-                    <info.icon size={24} style={{ color: colors.navy }} strokeWidth={2.5} />
+                    <info.icon size={24} className="text-navy" strokeWidth={2.5} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">
+                    <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">
                       {info.title}
                     </h4>
-                    <p className="text-lg font-bold text-white group-hover:text-[#EEBD08] transition-colors duration-300">
+                    <p className="text-lg font-bold text-navy group-hover:text-[#EEBD08] transition-colors duration-300">
                       {info.detail}
                     </p>
                   </div>
                 </motion.div>
               ))}
-
-              {/* Social Media Links */}
-              <motion.div variants={itemVariants} className="mt-4 pt-8 border-t border-white/10">
-                <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-4">
-                  Follow Us
-                </h4>
-                <div className="flex gap-4">
-                  <a href="https://www.instagram.com/handover.expert/" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#EEBD08] hover:text-[#0F2D81] hover:scale-105 shadow-xs backdrop-blur-sm transition-all duration-300">
-                    <InstagramIcon size={20} />
-                  </a>
-                  <a href="https://www.youtube.com/@Hand-overexpert/shorts" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#EEBD08] hover:text-[#0F2D81] hover:scale-105 shadow-xs backdrop-blur-sm transition-all duration-300">
-                    <YoutubeIcon size={20} />
-                  </a>
-                  <a href="https://www.facebook.com/people/Handover-Experts" className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#EEBD08] hover:text-[#0F2D81] hover:scale-105 shadow-xs backdrop-blur-sm transition-all duration-300">
-                    <FacebookIcon size={20} />
-                  </a>
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Right Column: Modal Trigger CTA */}
@@ -184,32 +130,27 @@ export default function ContactFooterSection() {
             >
               <motion.div
                 variants={itemVariants}
-                className="w-full bg-white/5 border border-white/10 rounded-3xl p-8 sm:p-12 backdrop-blur-xl shadow-2xl flex flex-col items-center justify-center text-center gap-6"
+                className="w-full bg-white border border-navy/10 rounded-3xl p-8 sm:p-12 shadow-lg flex flex-col items-center justify-center text-center gap-6"
               >
                 <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mb-2"
-                  style={{ backgroundColor: `${colors.yellow}20`, color: colors.yellow }}
+                  className="w-20 h-20 rounded-full flex items-center justify-center mb-2 bg-[#EEBD08]/20"
                 >
-                  <CalendarDays size={40} strokeWidth={1.5} />
+                  <CalendarDays size={40} className="text-navy" strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-3xl font-black text-white tracking-tight">
+                <h3 className="text-3xl font-black text-navy tracking-tight">
                   Secure Your Investment
                 </h3>
 
-                <p className="text-zinc-300 text-base max-w-md mx-auto mb-4">
+                <p className="text-zinc-600 text-base max-w-md mx-auto mb-4">
                   Don't leave your new property to chance. Schedule a comprehensive home inspection today and let our experts handle the rest.
                 </p>
 
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => setIsModalOpen(true)}
-                  style={{
-                    backgroundColor: colors.yellow,
-                    color: colors.navy,
-                  }}
-                  className="px-8 py-4 rounded-xl font-black text-base uppercase tracking-widest flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(238,189,8,0.3)] transition-shadow hover:shadow-[0_0_30px_rgba(238,189,8,0.5)]"
+                  className="bg-[#EEBD08] text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-md"
                 >
                   Book Inspection Now
                 </motion.button>
@@ -222,24 +163,25 @@ export default function ContactFooterSection() {
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6"
+            className="border-t border-navy/10 pt-8 flex items-center justify-center text-center"
           >
-            {/* Copyright */}
-            <motion.div variants={itemVariants} className="text-xs sm:text-sm text-zinc-400 font-medium tracking-wide">
-              © {new Date().getFullYear()} Handover expert. All rights reserved.
-            </motion.div>
-
-            {/* Quick Links */}
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-6 sm:gap-8">
-              {["About", "Services", "Inspection", "Results"].map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className="text-xs sm:text-sm font-bold text-zinc-300 hover:text-[#EEBD08] transition-colors uppercase tracking-wider bg-white/5 px-4 py-2 rounded-full border border-white/5 hover:border-[#EEBD08]/50"
+            <motion.div 
+              variants={itemVariants} 
+              className="text-xs sm:text-sm text-zinc-500 font-medium tracking-wide flex flex-col sm:flex-row items-center gap-1 sm:gap-2"
+            >
+              <span>© {new Date().getFullYear()} Handover Expert. All rights reserved.</span>
+              <span className="hidden sm:inline">|</span>
+              <span>
+                Built by{" "}
+                <a 
+                  href="https://thecontentgang.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-navy hover:text-[#EEBD08] font-bold transition-colors"
                 >
-                  {link}
+                  thecontentgang.com
                 </a>
-              ))}
+              </span>
             </motion.div>
           </motion.footer>
 

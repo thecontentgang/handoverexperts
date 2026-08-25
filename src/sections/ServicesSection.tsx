@@ -12,11 +12,7 @@ import {
   CalendarCheck
 } from "lucide-react";
 
-const colors = {
-  navy: "#0F2D81",
-  yellow: "#EEBD08",
-  white: "#FFFFFF",
-};
+
 
 // --- Updated Service Data ---
 const servicesData = [
@@ -92,8 +88,7 @@ export default function ServicesSection() {
     <>
       <section id="services"
         ref={ref}
-        style={{ backgroundColor: colors.white }}
-        className="py-20 relative font-sans"
+        className="py-20 relative font-sans bg-white"
       >
         {/* SEO Crawler Content - Hidden from UI but read by Google */}
         <div className="sr-only">
@@ -119,8 +114,7 @@ export default function ServicesSection() {
           >
             <motion.h2
               variants={cardVariants}
-              style={{ color: colors.navy }}
-              className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-navy"
             >
               Our Home Inspection Services in Hyderabad
             </motion.h2>
@@ -147,30 +141,28 @@ export default function ServicesSection() {
                 whileHover={{ y: -6 }}
                 className="relative flex flex-col group transition-all duration-300 shadow-xl hover:shadow-2xl rounded-3xl"
               >
-                {/* The core Navy Box */}
+                {/* The core White Box with Navy Border/Shadow */}
                 <div 
-                  style={{ backgroundColor: colors.navy }} 
-                  className="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-5 flex-grow z-10 rounded-3xl"
+                  className="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-5 flex-grow z-10 rounded-3xl bg-white border border-navy/10 group-hover:border-navy shadow-lg transition-colors"
                 >
                   {/* Top Row: Title and Icon */}
                   <div className="flex flex-row items-center justify-between w-full gap-4">
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-navy leading-tight">
                       {service.title}
                     </h3>
                     <div 
-                      style={{ backgroundColor: colors.yellow }}
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shrink-0 shadow-md"
+                      className="bg-yellow w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shrink-0 shadow-md"
                     >
                       <service.icon 
                         size={24} 
-                        style={{ color: colors.navy }} 
+                        className="text-navy" 
                         strokeWidth={2.5}
                       />
                     </div>
                   </div>
                   
                   {/* Bottom Area: Description */}
-                  <p className="text-zinc-300 text-[14px] sm:text-[15px] leading-relaxed mb-0">
+                  <p className="text-zinc-600 text-[14px] sm:text-[15px] leading-relaxed mb-0">
                     {service.description}
                   </p>
                 </div>
@@ -187,8 +179,7 @@ export default function ServicesSection() {
           >
             <motion.h3
               variants={cardVariants}
-              style={{ color: colors.navy }}
-              className="text-2xl sm:text-3xl font-black tracking-tight"
+              className="text-2xl sm:text-3xl font-black tracking-tight text-navy"
             >
               Book Home Inspection Service Today
             </motion.h3>
@@ -202,11 +193,10 @@ export default function ServicesSection() {
             
             <motion.button
               variants={cardVariants}
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(15,45,129,0.25)" }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setIsModalOpen(true)}
-              style={{ backgroundColor: colors.navy, color: colors.white }}
-              className="px-6 py-4 sm:px-8 sm:py-4 mt-2 rounded-2xl font-bold text-sm sm:text-base uppercase tracking-widest flex items-center gap-3 transition-all"
+              className="bg-yellow text-navy px-6 py-4 sm:px-8 sm:py-5 mt-2 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
             >
               <CalendarCheck size={20} />
               Book Your Inspection
