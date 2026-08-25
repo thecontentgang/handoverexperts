@@ -11,6 +11,7 @@ import FloatingContactButton from "./components/FloatingBar";
 import WhenToInspectSection from "./sections/WhenToInspectSection";
 import AreasWeServeSection from "./sections/AreasWeServeSection";
 import FAQSection from "./sections/FAQSection";
+import HowItWorksSection from "./sections/HowItWorksSection";
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
       <WhenToInspectSection />
       <Inspection />
       <AreasWeServeSection />
-    
+      <HowItWorksSection />
       <WhyChooseUsSection />
       <ResultsSection />
       <FAQSection />
