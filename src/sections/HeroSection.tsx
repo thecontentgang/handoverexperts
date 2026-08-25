@@ -52,7 +52,7 @@ export default function HeroSection() {
         {/* SEO / Crawler Content (Visually hidden but read by Google) */}
         <div className="sr-only">
           <p>
-            Buying a home is probably the biggest cheque you'll ever sign — so why take possession on trust alone? Handover Expert delivers home inspection services in Hyderabad built around one simple idea: you deserve to know exactly what you're getting before you get it. Our engineers run a 400+ point home inspection on every flat, apartment, or villa we visit, covering everything from live wiring to hairline wall cracks, and hand you a clear digital report — with photos — within 24 hours.
+            Buying a home is probably the biggest cheque you'll ever sign — so why take possession on trust alone? Handover Expert delivers home inspection services in Hyderabad built around one simple idea: you deserve to know exactly what you're getting before you get it. Our engineers run a 700+ point home inspection on every flat, apartment, or villa we visit, covering everything from live wiring to hairline wall cracks, and hand you a clear digital report — with photos — within 24 hours.
           </p>
           <p>
             This isn't a generic walkthrough. Every home inspection in Hyderabad we conduct follows the same structured process, whether it's a 2BHK in Kondapur or a luxury villa in Kokapet. If you've searched for home inspection or home inspection services and landed here, here's the short version: we find what builders don't tell you, before it becomes your problem to fix.
@@ -171,7 +171,7 @@ export default function HeroSection() {
               variants={fadeInUpVariants}
               className="text-sm sm:text-base md:text-xl lg:text-xl text-zinc-600 max-w-2xl lg:max-w-4xl mx-auto font-normal leading-relaxed px-2"
             >
-              Don't take possession on trust alone. We run a comprehensive 400+ point inspection uncovering what builders don't tell you and hand you a clear digital report within 24 hours.
+             Our engineers inspect your home across 700+ checkpoints, identify defects, document them and give you a detailed inspection report.so you know what needs to be fixed before it becomes your problem.
             </motion.p>
           </div>
 

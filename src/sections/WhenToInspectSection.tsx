@@ -7,7 +7,7 @@ import {
   Globe, 
   FileCheck, 
   Building2,
-  AlertCircle
+  
 } from "lucide-react";
 
 // --- Data for Scenarios ---
@@ -151,18 +151,7 @@ export default function WhenToInspectSection() {
           ))}
         </div>
 
-        {/* --- Footer / Conclusion --- */}
-        <motion.div
-          variants={fadeInUpVariants}
-          className="mt-16 sm:mt-20 flex flex-col md:flex-row items-center justify-center gap-4 bg-navy/5 border border-navy/10 p-6 sm:p-8 rounded-2xl md:rounded-full text-center md:text-left backdrop-blur-md"
-        >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full shrink-0 bg-yellow">
-            <AlertCircle size={24} className="text-navy" strokeWidth={2.5} />
-          </div>
-          <p className="text-base sm:text-lg font-medium text-navy max-w-2xl">
-            The pattern across every single one of these scenarios is simple: <span className="text-yellow font-bold">an inspection works best before you sign</span>, not after you've already committed.
-          </p>
-        </motion.div>
+        
         
       </motion.div>
     </section>

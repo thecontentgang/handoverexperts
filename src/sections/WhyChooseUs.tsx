@@ -6,7 +6,7 @@ import {
   XCircle, 
   Building2, 
   Home, 
-  ShieldAlert,
+
   CalendarCheck,
   ArrowRight,
   MoveHorizontal
@@ -14,7 +14,7 @@ import {
 
 // --- Data extracted from original snippet ---
 const comparisonData = [
-  { parameter: "Inspection Checkpoints", us: "SOP based 400+ detailed checkpoints", them: "Usually 100-200 checkpoints" },
+  { parameter: "Inspection Checkpoints", us: "SOP based 700+ detailed checkpoints", them: "Usually 100-200 checkpoints" },
   { parameter: "Team Expertise", us: "Trained full-time engineers", them: "Individual freelancers or part-time inspectors" },
   { parameter: "Inspection Process", us: "Tech Driven SOP-driven process", them: "Depends on individual inspector" },
   { parameter: "Report Quality", us: "Detailed digital report with photos & observations", them: "Basic PDF or checklist report" },
@@ -206,23 +206,7 @@ export default function WhyChooseUsSection() {
           </motion.div>
 
           {/* --- Post-Table Narrative --- */}
-          <motion.div
-            variants={itemVariants}
-            className="max-w-4xl mx-auto space-y-6 text-center"
-          >
-            <div className="inline-flex justify-center items-center w-12 h-12 rounded-full bg-navy/5 mb-2">
-              <ShieldAlert size={24} className="text-yellow" />
-            </div>
-            
-            <p className="text-base md:text-lg text-zinc-600 font-medium leading-relaxed">
-              If you're weighing affordable home inspection services against a cheaper local freelancer, ask one question before you decide: <strong className="text-navy">will they still pick up the phone if a builder disputes their findings three weeks later?</strong> A company with full-time engineers and internal report review will. A freelancer, more often than not, has already moved on to the next job.
-            </p>
-            
-            <p className="text-base md:text-lg text-navy font-bold leading-relaxed">
-              When you're ready to book home inspection service with a team that treats every inspection like it's protecting their own reputation — not just filling a slot — that's exactly what you get here.
-            </p>
-          </motion.div>
-
+          
           {/* --- Call to Action (CTA) --- */}
           <motion.div
             variants={itemVariants}

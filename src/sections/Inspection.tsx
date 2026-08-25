@@ -181,7 +181,7 @@ export default function InspectionCoverageSection() {
             variants={itemVariants}
             className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-navy"
           >
-            What's Included in Our 400+ Point Checklist
+            What's Included in Our 700+ Point Checklist
           </motion.h2>
 
           <motion.p
@@ -252,7 +252,7 @@ export default function InspectionCoverageSection() {
   <div className="lg:max-w-2xl text-center lg:text-left relative z-10">
     <motion.div variants={itemVariants} className="space-y-2 mb-6">
       <h3 className="text-yellow text-xs font-bold tracking-widest uppercase">
-        400+ Inspection Points Covered
+        700+ Inspection Points Covered
       </h3>
       <h4 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-[1.2]">
   Professional Home Inspection{" "}

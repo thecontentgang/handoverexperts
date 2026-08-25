@@ -9,17 +9,17 @@ const faqData = [
   {
     id: 1,
     question: "How much does a home inspection cost in Hyderabad?",
-    answer: "Home inspection costs in Hyderabad vary by property size and inspection depth — from a focused pre-possession check to a full 400+ point inspection. Handover Expert shares a transparent quote once we know your property size and locality; get in touch for an exact price."
+    answer: "Home inspection costs in Hyderabad vary by property size and inspection depth — from a focused pre-possession check to a full 700+ point inspection. Handover Expert shares a transparent quote once we know your property size and locality; get in touch for an exact price."
   },
   {
     id: 2,
     question: "How long does a home inspection take in Hyderabad?",
-    answer: "A standard 400+ point inspection takes 2 to 4 hours on-site, depending on the size of the flat, apartment, or villa. You'll have the complete digital report, with photos, within 24 hours of the visit."
+    answer: "A standard 700+ point inspection takes 2 to 4 hours on-site, depending on the size of the flat, apartment, or villa. You'll have the complete digital report, with photos, within 24 hours of the visit."
   },
   {
     id: 3,
     question: "What does a home inspection in Hyderabad actually check?",
-    answer: "It covers flooring, electrical wiring, plumbing, waterproofing, dampness, sanitary fittings, area measurement, doors and windows, internal walls, and terrace drainage — 400+ individual points across every category that affects how safe and liveable your home actually is."
+    answer: "It covers flooring, electrical wiring, plumbing, waterproofing, dampness, sanitary fittings, area measurement, doors and windows, internal walls, and terrace drainage — 700+ individual points across every category that affects how safe and liveable your home actually is."
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const faqData = [
   {
     id: 7,
     question: "What's the difference between Handover Expert and a local freelance inspector?",
-    answer: "We run a SOP-based 400+ point checklist executed by full-time trained engineers on our own HXOPS system, with internal review before every report goes out. Most local freelancers work from a shorter, informal checklist with no structured reporting or second-level review."
+    answer: "We run a SOP-based 700+ point checklist executed by full-time trained engineers on our own HXOPS system, with internal review before every report goes out. Most local freelancers work from a shorter, informal checklist with no structured reporting or second-level review."
   }
 ];
 
