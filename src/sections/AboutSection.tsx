@@ -67,53 +67,55 @@ export default function AboutSection() {
 
           {/* Stats Row with Arc & Fade effect */}
           <motion.div
-            variants={fadeInUpVariants}
-            className="w-full flex flex-row justify-between items-center gap-2 sm:gap-6 md:gap-8 px-4 mb-20 z-10 relative"
-          >
-            {/* Edge fade gradients (as seen in image) */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+  variants={fadeInUpVariants}
+  // 1. Switched to grid-cols-2 for mobile, and sm:flex for desktop
+  className="w-full grid grid-cols-2 gap-y-10 gap-x-4 sm:flex sm:flex-row sm:justify-between items-center sm:gap-6 md:gap-8 px-4 mb-20 z-10 relative"
+>
+  {/* Edge fade gradients - Hidden on mobile so they don't cover the grid text */}
+  <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+  <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
 
-            {/* Homes Checked (Outer Left - Lowest in Arc) */}
-            <div className="flex-1 text-center translate-y-5 sm:translate-y-8 md:translate-y-10 opacity-70">
-              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
-                10K+
-              </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
-                Homes Checked
-              </p>
-            </div>
+  {/* Homes Checked (Outer Left) */}
+  {/* 2. Removed mobile translate-y-5 so it sits flat in the grid, but keeps arc on sm+ */}
+  <div className="text-center sm:flex-1 opacity-70 translate-y-0 sm:translate-y-8 md:translate-y-10">
+    <h3 className="text-yellow text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+      10K+
+    </h3>
+    <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
+      Homes Checked
+    </p>
+  </div>
 
-            {/* Defects Found (Inner Left - Higher in Arc) */}
-            <div className="flex-1 text-center">
-              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
-                40K+
-              </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
-                Defects Found
-              </p>
-            </div>
+  {/* Defects Found (Inner Left) */}
+  <div className="text-center sm:flex-1">
+    <h3 className="text-yellow text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+      40K+
+    </h3>
+    <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
+      Defects Found
+    </p>
+  </div>
 
-            {/* Google Reviews (Inner Right - Higher in Arc) */}
-            <div className="flex-1 text-center">
-              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
-                1K+
-              </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
-                Google Reviews
-              </p>
-            </div>
+  {/* Google Reviews (Inner Right) */}
+  <div className="text-center sm:flex-1">
+    <h3 className="text-yellow text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+      1.2K+
+    </h3>
+    <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
+      Google Reviews
+    </p>
+  </div>
 
-            {/* Followers (Outer Right - Lowest in Arc) */}
-            <div className="flex-1 text-center translate-y-5 sm:translate-y-8 md:translate-y-10 opacity-70">
-              <h3 className="text-yellow text-2xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
-                58K+
-              </h3>
-              <p className="text-[9px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
-                Followers
-              </p>
-            </div>
-          </motion.div>
+  {/* Followers (Outer Right) */}
+  <div className="text-center sm:flex-1 opacity-70 translate-y-0 sm:translate-y-8 md:translate-y-10">
+    <h3 className="text-yellow text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-md">
+      85K+
+    </h3>
+    <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
+      Followers
+    </p>
+  </div>
+</motion.div>
 
           {/* Centered Paragraph Text */}
           <motion.div

@@ -160,36 +160,39 @@ export default function HeroSection() {
 
           {/* Synchronized Call To Actions */}
           <motion.div
-            variants={fadeInUpVariants}
-            className="flex flex-row gap-2 sm:gap-4 justify-center items-center w-full pt-4 md:pt-6"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setIsModalOpen(true)}
-              className="flex-1 sm:flex-none bg-yellow text-navy font-black px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
-            >
-              Book My Inspection
-            </motion.button>
+  variants={fadeInUpVariants}
+  // 1. Changed "items-center" to "items-stretch" to force equal heights
+  className="flex flex-row gap-2 sm:gap-4 justify-center items-stretch w-full pt-4 md:pt-6"
+>
+  <motion.button
+    whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+    whileTap={{ scale: 0.98 }}
+    onClick={() => setIsModalOpen(true)}
+    // 2. Added "h-full" and adjusted mobile text size/padding to fit perfectly
+    className="flex-1 sm:flex-none h-full bg-yellow text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
+  >
+    Book My Inspection
+  </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => {
-                if (window.innerWidth < 640) {
-                  window.location.href = "tel:+916303363041";
-                }
-              }}
-              className="flex-1 sm:flex-none bg-yellow text-navy font-black px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
-            >
-              <span className="sm:hidden">
-                Talk to Expert
-              </span>
-              <span className="hidden sm:inline">
-                Talk to Expert
-              </span>
-            </motion.button>
-          </motion.div>
+  <motion.button
+    whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+    whileTap={{ scale: 0.98 }}
+    onClick={() => {
+      if (window.innerWidth < 640) {
+        window.location.href = "tel:+916303363041";
+      }
+    }}
+    // 2. Added "h-full" and matching text size/padding
+    className="flex-1 sm:flex-none h-full bg-yellow text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
+  >
+    <span className="sm:hidden">
+      Talk to Expert
+    </span>
+    <span className="hidden sm:inline">
+      Talk to Expert
+    </span>
+  </motion.button>
+</motion.div>
         </motion.div>
       </div>
       <BookingModal isOpen={isModal} onClose={() => setIsModalOpen(false)} />
