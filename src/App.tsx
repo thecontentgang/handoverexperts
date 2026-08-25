@@ -8,6 +8,10 @@ import WhyChooseUsSection from "./sections/WhyChooseUs";
 import ResultsSection from "./sections/Results";
 import ContactFooterSection from "./sections/ContactFooter";
 import FloatingContactButton from "./components/FloatingBar";
+import WhenToInspectSection from "./sections/WhenToInspectSection";
+import AreasWeServeSection from "./sections/AreasWeServeSection";
+import FAQSection from "./sections/FAQSection";
+
 const App = () => {
   return (
     <main>
@@ -16,9 +20,13 @@ const App = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <WhenToInspectSection />
       <Inspection />
+      <AreasWeServeSection />
+    
       <WhyChooseUsSection />
       <ResultsSection />
+      <FAQSection />
       <ContactFooterSection />
     </main>
   )

@@ -27,7 +27,6 @@ const fadeInUpVariants: Variants = {
 };
 
 export default function HeroSection() {
-
   const [isModal, setIsModalOpen] = useState(false);
   const controls = useAnimation();
   const ref = useRef(null);
@@ -44,17 +43,26 @@ export default function HeroSection() {
       <div
         ref={ref}
         style={{ backgroundColor: customColors.deepNavy }}
-        // Changed to h-[100dvh] and flex-col justify-center to lock it to viewport height
         className="h-[100dvh] text-white relative overflow-hidden flex flex-col justify-center items-center px-4"
       >
         {/* Structural Minimal Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(238,189,8,0.07),transparent_60%)] pointer-events-none" />
 
-        {/* Defects Illustrations Cloud 
-        - Increased max-widths for larger desktop displays
-        - Added fetchPriority for faster Above-The-Fold loading
-      */}
+        {/* SEO / Crawler Content (Visually hidden but read by Google) */}
+        <div className="sr-only">
+          <p>
+            Buying a home is probably the biggest cheque you'll ever sign — so why take possession on trust alone? Handover Expert delivers home inspection services in Hyderabad built around one simple idea: you deserve to know exactly what you're getting before you get it. Our engineers run a 400+ point home inspection on every flat, apartment, or villa we visit, covering everything from live wiring to hairline wall cracks, and hand you a clear digital report — with photos — within 24 hours.
+          </p>
+          <p>
+            This isn't a generic walkthrough. Every home inspection in Hyderabad we conduct follows the same structured process, whether it's a 2BHK in Kondapur or a luxury villa in Kokapet. If you've searched for home inspection or home inspection services and landed here, here's the short version: we find what builders don't tell you, before it becomes your problem to fix.
+          </p>
+          <p>
+            Handover Expert isn't just another house inspection Hyderabad company running through a checklist. We're the team homebuyers call when they want a second, unbiased opinion before signing off on the single biggest purchase of their life.
+          </p>
+        </div>
+
+        {/* Defects Illustrations Cloud */}
         <motion.div
           variants={fadeInUpVariants}
           initial="hidden"
@@ -119,16 +127,15 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 md:px-5 md:py-1 rounded-full backdrop-blur-md shadow-xs"
           >
             <MapPin size={16} style={{ color: customColors.yellowGold }} />
-            <span className="text-xs md:text-sm font-bold tracking-wider text-zinc-300 uppercase">
-              Best Home Inspection in Hyderabad
-            </span>
+            <h1 className="text-xs md:text-sm font-bold tracking-wider text-zinc-300 uppercase">
+              Home Inspection services in Hyderabad
+            </h1>
           </motion.div>
 
           {/* Headline Stack */}
           <div className="space-y-4 md:space-y-2 w-full">
-            <motion.h1
+            <motion.h2
               variants={fadeInUpVariants}
-              // Significantly increased desktop typography size
               className="text-4xl sm:text-5xl md:text-7xl lg:text-[4.5rem] font-black tracking-tight leading-[1.1] text-white"
             >
               Find Hidden House Defects
@@ -137,22 +144,20 @@ export default function HeroSection() {
               <span style={{ color: customColors.yellowGold }} className="inline-block mt-1 sm:mt-0">
                 Take Handover.
               </span>
-            </motion.h1>
+            </motion.h2>
 
-            {/* Description */}
+            {/* Description Updated Based on New Copy */}
             <motion.p
               variants={fadeInUpVariants}
-              // Scaled text up for desktop readability
               className="text-sm sm:text-base md:text-xl lg:text-xl text-zinc-300 max-w-2xl lg:max-w-4xl mx-auto font-normal leading-relaxed px-2"
             >
-              We inspect your new Apartment or Villa for water leakage, faulty wiring, cracks, and bad finishing. Get a clear digital report within 24 hours.
+              Don't take possession on trust alone. We run a comprehensive 400+ point inspection uncovering what builders don't tell you and hand you a clear digital report within 24 hours.
             </motion.p>
           </div>
 
           {/* Synchronized Call To Actions */}
           <motion.div
             variants={fadeInUpVariants}
-            // Forced flex-row on mobile and slightly reduced gap to save space
             className="flex flex-row gap-2 sm:gap-4 justify-center items-center w-full pt-4 md:pt-6"
           >
             <motion.button
@@ -160,33 +165,31 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               onClick={() => setIsModalOpen(true)}
               style={{ backgroundColor: customColors.yellowGold, color: customColors.deepNavy }}
-              // Replaced w-full with flex-1 for 50/50 split on mobile. Scaled down mobile text/padding.
               className="flex-1 sm:flex-none font-extrabold px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-[10px] sm:text-sm md:text-base tracking-wider uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
             >
               Book My Inspection
             </motion.button>
 
-           <motion.button
-  whileHover={{
-    backgroundColor: "rgba(255,255,255,0.06)",
-    borderColor: customColors.yellowGold,
-  }}
-  whileTap={{ scale: 0.98 }}
-  onClick={() => {
-    if (window.innerWidth < 640) {
-      window.location.href = "tel:+916303363041";
-    }
-  }}
-  className="flex-1 sm:flex-none bg-transparent border border-white/20 text-white font-bold px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-[10px] sm:text-sm md:text-base tracking-wider uppercase transition-all flex items-center justify-center backdrop-blur-xs text-center leading-tight"
->
-  <span className="sm:hidden">
-    Talk to Expert
-  </span>
-
-  <span className="hidden sm:inline">
-    +91 63033 63041
-  </span>
-</motion.button>
+            <motion.button
+              whileHover={{
+                backgroundColor: "rgba(255,255,255,0.06)",
+                borderColor: customColors.yellowGold,
+              }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                if (window.innerWidth < 640) {
+                  window.location.href = "tel:+916303363041";
+                }
+              }}
+              className="flex-1 sm:flex-none bg-transparent border border-white/20 text-white font-bold px-2 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-[10px] sm:text-sm md:text-base tracking-wider uppercase transition-all flex items-center justify-center backdrop-blur-xs text-center leading-tight"
+            >
+              <span className="sm:hidden">
+                Talk to Expert
+              </span>
+              <span className="hidden sm:inline">
+                Talk to Expert
+              </span>
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>

@@ -187,7 +187,7 @@ export default function InspectionCoverageSection() {
             style={{ color: colors.navy }}
             className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight"
           >
-            What Does a Home Inspection Cover?
+            What's Included in Our 400+ Point Checklist
           </motion.h2>
 
           <motion.p

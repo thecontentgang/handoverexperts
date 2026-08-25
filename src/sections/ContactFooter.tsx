@@ -142,7 +142,7 @@ export default function ContactFooterSection() {
               {/* Info Cards */}
               {[
                 { icon: PhoneCall, title: "Call Us", detail: "+91 63033 63041" },
-                { icon: Mail, title: "Email Us", detail: "hello@handoverexpert.com" },
+                { icon: Mail, title: "Email Us", detail: "sushmitha@handoverexpert.com" },
                 { icon: MapPin, title: "Visit Us", detail: "Asian Suncity, Hyderabad, India" },
               ].map((info, idx) => (
                 <motion.div key={idx} variants={itemVariants} className="flex items-center gap-5 group cursor-pointer">

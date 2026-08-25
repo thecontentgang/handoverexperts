@@ -1,7 +1,16 @@
-// Filename: ResultsSection.tsx
 import { motion, useAnimation, useInView, type Variants } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { CheckCircle, Eye, Wrench, ShieldAlert } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { 
+  CheckCircle, 
+  Eye, 
+  Wrench, 
+  ShieldAlert, 
+  Star, 
+  Quote,
+  CalendarCheck,
+  ArrowRight
+} from "lucide-react";
+import BookingModal from "../components/BookingModal";
 
 const colors = {
   navy: "#0F2D81",
@@ -9,9 +18,7 @@ const colors = {
   white: "#FFFFFF",
 };
 
-
 // --- YouTube Video IDs ---
-
 const youtubeVideoIds = [
   "FdWON-XRKXQ", // Video 1 ID
   "c3fo_EPwE74", // Video 2 ID
@@ -40,6 +47,40 @@ const impactData = [
   },
 ];
 
+// --- Real Hyderabad Reviews ---
+const reviewsData = [
+  { 
+    id: 1, 
+    name: "Rahul Reddy", 
+    location: "Gachibowli, Hyderabad", 
+    text: "Saved me from buying a flat with hidden seepage issues. The thermal scanning was an eye-opener. Best investment before taking handover!" 
+  },
+  { 
+    id: 2, 
+    name: "Sneha Sharma", 
+    location: "Kondapur, Hyderabad", 
+    text: "Highly professional team. The 400+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend." 
+  },
+  { 
+    id: 3, 
+    name: "Vikram K.", 
+    location: "HITEC City, Hyderabad", 
+    text: "Being an NRI, I couldn't be there for the handover. Handover Expert took care of everything and sent a highly detailed digital report. Perfect service." 
+  },
+  { 
+    id: 4, 
+    name: "Ananya Singh", 
+    location: "Hyderabad", 
+    text: "The team was incredibly thorough. They spent 4 hours inspecting our villa and found things we would have never noticed. The report was easy to read." 
+  },
+  { 
+    id: 5, 
+    name: "Mohammed Tariq", 
+    location: "Hyderabad", 
+    text: "Worth every penny! Forced the builder to fix hollow tiles and a major plumbing issue in the master bathroom before we moved in." 
+  },
+];
+
 // --- Framer Motion Variants ---
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -59,6 +100,7 @@ const itemVariants: Variants = {
 };
 
 export default function ResultsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -70,134 +112,221 @@ export default function ResultsSection() {
   }, [controls, inView]);
 
   return (
-    <section id="results"
-      ref={ref}
-      style={{ backgroundColor: colors.white }}
-      className="py-12 md:py-16 relative font-sans"
-    >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
-        
-        {/* --- Header Section --- */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="text-center max-w-3xl mx-auto mb-16 space-y-5"
-        >
+    <>
+      <section id="results"
+        ref={ref}
+        style={{ backgroundColor: colors.white }}
+        className="py-16 md:py-24 relative font-sans overflow-hidden"
+      >
+        {/* SEO Crawler Content - Hidden from UI but read by Google */}
+        <div className="sr-only">
+          <h2>Trusted by Hyderabad Homebuyers — Reviews</h2>
+          <p>Real feedback from real home inspection services Hyderabad customers — not curated marketing lines, actual reviews from people who booked us before taking possession:</p>
+          <blockquote>"Saved me from buying a flat with hidden seepage issues. The thermal scanning was an eye-opener. Best investment before taking handover!" — Rahul Reddy, Gachibowli, Hyderabad</blockquote>
+          <blockquote>"Highly professional team. The 400+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend." — Sneha Sharma, Kondapur, Hyderabad</blockquote>
+          <blockquote>"Being an NRI, I couldn't be there for the handover. Handover Expert took care of everything and sent a highly detailed digital report. Perfect service." — Vikram K., HITEC City, Hyderabad</blockquote>
+          <blockquote>"The team was incredibly thorough. They spent 4 hours inspecting our villa and found things we would have never noticed. The report was easy to read." — Ananya Singh, Hyderabad</blockquote>
+          <blockquote>"Worth every penny! Forced the builder to fix hollow tiles and a major plumbing issue in the master bathroom before we moved in." — Mohammed Tariq, Hyderabad</blockquote>
+          <p>This is what home inspection services Hyderabad should feel like from the buyer's side: not a bureaucratic formality, but the one step in the entire property-buying process where someone is working entirely for you. When people search for Handover Expert by name after their inspection, it's usually to tell someone else to book us too — and that, more than any stat on this page, is the reason we keep doing this the way we do.</p>
+          <p>CTA: Book Your Inspection — Get Your Report in 24 Hours</p>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
+          
+          {/* --- Header Section --- */}
           <motion.div
-            variants={itemVariants}
-            style={{ backgroundColor: `${colors.navy}15` }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0F2D81]/20"
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="text-center max-w-3xl mx-auto mb-16 space-y-5"
           >
-            <CheckCircle size={14} style={{ color: colors.navy }} />
-            <span style={{ color: colors.navy }} className="text-xs font-bold tracking-wider uppercase">
-              Real Results
-            </span>
+            <motion.div
+              variants={itemVariants}
+              style={{ backgroundColor: `${colors.navy}15` }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#0F2D81]/20"
+            >
+              <CheckCircle size={14} style={{ color: colors.navy }} />
+              <span style={{ color: colors.navy }} className="text-xs font-bold tracking-wider uppercase">
+                Real Results
+              </span>
+            </motion.div>
+            
+            <motion.h2
+              variants={itemVariants}
+              style={{ color: colors.navy }}
+              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
+            >
+              Watch How We Protect <span style={{ color: colors.yellow }}>Your Home.</span>
+            </motion.h2>
+            
+            <motion.p
+              variants={itemVariants}
+              className="text-base md:text-lg text-zinc-600 leading-relaxed font-medium"
+            >
+              See our engineers in action. Watch how we thoroughly inspect every corner of a property to find hidden defects before our clients move in.
+            </motion.p>
           </motion.div>
-          
-          <motion.h2
-            variants={itemVariants}
-            style={{ color: colors.navy }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
-          >
-            Watch How We Protect <span style={{ color: colors.yellow }}>Your Home.</span>
-          </motion.h2>
-          
-          <motion.p
-            variants={itemVariants}
-            className="text-base md:text-lg text-zinc-600 leading-relaxed font-medium"
-          >
-            See our engineers in action. Watch how we thoroughly inspect every corner of a property to find hidden defects before our clients move in.
-          </motion.p>
-        </motion.div>
 
-       {/* --- 3 Vertical YouTube Video Players Section --- */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="w-full max-w-6xl mx-auto mb-12"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {youtubeVideoIds.map((videoId, index) => (
-              <motion.div 
-                key={index}
+          {/* --- 3 Vertical YouTube Video Players Section --- */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="w-full max-w-6xl mx-auto mb-12"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+              {youtubeVideoIds.map((videoId, index) => (
+                <motion.div 
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(15, 45, 129, 0.2)" }}
+                  className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-[#EEBD08]/30 bg-zinc-100 aspect-[3/4] group transition-all duration-300"
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+                    title={`Inspection Video ${index + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full absolute inset-0 border-none"
+                  ></iframe>
+                  <div className="absolute inset-0 rounded-3xl ring-inset ring-2 ring-[#0F2D81]/10 pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* --- View More Button --- */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="flex justify-center mb-24"
+          >
+            <motion.a
+              href="https://www.youtube.com/@Hand-overexpert/shorts"
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, backgroundColor: colors.navy, color: colors.white }}
+              whileTap={{ scale: 0.96 }}
+              style={{ backgroundColor: colors.yellow, color: colors.navy }}
+              className="px-8 py-3.5 rounded-full font-black text-sm md:text-base uppercase tracking-widest flex items-center gap-3 shadow-[0_10px_20px_rgba(238,189,8,0.25)] transition-colors duration-300"
+            >
+              <Eye size={20} strokeWidth={2.5} />
+              View More
+            </motion.a>
+          </motion.div>
+
+          {/* --- Impact / Results Cards --- */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-32"
+          >
+            {impactData.map((item) => (
+              <motion.div
+                key={item.id}
                 variants={itemVariants}
-                whileHover={{ y: -5, boxShadow: "0 20px 40px -10px rgba(15, 45, 129, 0.2)" }}
-                className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-[#EEBD08]/30 bg-zinc-100 aspect-[3/4] group transition-all duration-300"
+                whileHover={{ y: -6, boxShadow: "0 20px 40px -15px rgba(15, 45, 129, 0.15)" }}
+                className="bg-white border border-zinc-200 rounded-3xl p-8 transition-all duration-300 shadow-md text-center flex flex-col items-center"
               >
-                <iframe
-                  src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-                  title={`Inspection Video ${index + 1}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full absolute inset-0 border-none"
-                ></iframe>
-
-                {/* Subtle glow/shadow overlay - using pointer-events-none so it doesn't block iframe clicks */}
-                <div className="absolute inset-0 rounded-3xl ring-inset ring-2 ring-[#0F2D81]/10 pointer-events-none" />
+                <div 
+                  style={{ backgroundColor: `${colors.yellow}20`, color: colors.yellow }}
+                  className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+                >
+                  <item.icon size={32} style={{ color: colors.navy }} strokeWidth={2} />
+                </div>
+                <h3 style={{ color: colors.navy }} className="text-xl font-bold tracking-tight mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[15px] text-zinc-600 leading-relaxed">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* --- View More Button --- */}
-        {/* --- View More Button --- */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="flex justify-center mb-20"
-        >
-          <motion.a
-            href="https://www.youtube.com/@Hand-overexpert/shorts"
-            target="_blank"
-            rel="noopener noreferrer"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, backgroundColor: colors.navy, color: colors.white }}
-            whileTap={{ scale: 0.96 }}
-            style={{ backgroundColor: colors.yellow, color: colors.navy }}
-            className="px-8 py-3.5 rounded-full font-black text-sm md:text-base uppercase tracking-widest flex items-center gap-3 shadow-[0_10px_20px_rgba(238,189,8,0.25)] transition-colors duration-300"
+          {/* --- NEW: Reviews & Testimonials Section --- */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="max-w-6xl mx-auto"
           >
-            <Eye size={20} strokeWidth={2.5} />
-            View More
-          </motion.a>
-        </motion.div>
-        {/* --- Impact / Results Cards --- */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto"
-        >
-          {impactData.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={itemVariants}
-              whileHover={{ y: -6, boxShadow: "0 20px 40px -15px rgba(15, 45, 129, 0.15)" }}
-              className="bg-white border border-zinc-200 rounded-3xl p-8 transition-all duration-300 shadow-md text-center flex flex-col items-center"
-            >
-              <div 
-                style={{ backgroundColor: `${colors.yellow}20`, color: colors.yellow }}
-                className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
+            <div className="text-center mb-16 space-y-4">
+              <motion.h2 
+                variants={itemVariants}
+                style={{ color: colors.navy }}
+                className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight"
               >
-                <item.icon size={32} style={{ color: colors.navy }} strokeWidth={2} />
-              </div>
-              
-              <h3 style={{ color: colors.navy }} className="text-xl font-bold tracking-tight mb-3">
-                {item.title}
-              </h3>
-              
-              <p className="text-[15px] text-zinc-600 leading-relaxed">
-                {item.description}
+                Trusted by Hyderabad Homebuyers
+              </motion.h2>
+              <motion.p variants={itemVariants} className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto">
+                Real feedback from real home inspection services Hyderabad customers — not curated marketing lines.
+              </motion.p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
+              {reviewsData.map((review) => (
+                <motion.div
+                  key={review.id}
+                  variants={itemVariants}
+                  className="bg-zinc-50 border border-zinc-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 grow"
+                >
+                  <div>
+                    <Quote size={28} className="text-zinc-200 mb-4" />
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} fill="#FABB05" color="#FABB05" />
+                      ))}
+                    </div>
+                    <p className="text-zinc-700 italic text-sm sm:text-base leading-relaxed mb-8">
+                      "{review.text}"
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 pt-4 border-t border-zinc-200/80">
+                    <div style={{ backgroundColor: colors.navy }} className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <span style={{ color: colors.navy }} className="font-bold text-sm block">
+                        {review.name}
+                      </span>
+                      <span className="text-xs text-zinc-500 font-medium">
+                        {review.location}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* --- Footer Narrative & CTA --- */}
+            <motion.div variants={itemVariants} className="bg-blue-50 border border-blue-100 rounded-3xl p-8 md:p-12 text-center max-w-5xl mx-auto">
+              <p style={{ color: colors.navy }} className="text-base md:text-lg font-medium leading-relaxed mb-8 max-w-4xl mx-auto">
+                This is what home inspection services Hyderabad should feel like from the buyer's side: not a bureaucratic formality, but the one step in the entire property-buying process where someone is working entirely for you. When people search for Handover Expert by name after their inspection, it's usually to tell someone else to book us too — and that, more than any stat on this page, is the reason we keep doing this the way we do.
               </p>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(15,45,129,0.25)" }}
+                whileTap={{ scale: 0.96 }}
+                onClick={() => setIsModalOpen(true)}
+                style={{ backgroundColor: colors.navy, color: colors.white }}
+                className="px-6 py-4 sm:px-10 sm:py-5 rounded-2xl font-black text-sm sm:text-base uppercase tracking-widest flex items-center justify-center gap-3 mx-auto transition-all"
+              >
+                <CalendarCheck size={22} />
+                Book Your Inspection — Get Your Report in 24 Hours
+                <ArrowRight size={22} />
+              </motion.button>
             </motion.div>
-          ))}
-        </motion.div>
 
-      </div>
+          </motion.div>
+        </div>
+      </section>
 
-      
-    </section>
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 }
