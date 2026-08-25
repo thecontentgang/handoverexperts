@@ -166,7 +166,7 @@ export default function AboutSection() {
             {/* Repair Costs Avoided (Inner Right) */}
             <div className="text-center sm:flex-1">
               <h3 className="text-blue-600 text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-sm">
-                ₹600 Cr+
+                600 Cr+
               </h3>
               <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Repair Costs Avoided
