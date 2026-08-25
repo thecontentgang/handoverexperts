@@ -8,7 +8,7 @@ import {
   CalendarDays,
 } from "lucide-react";
 // Adjust the import path based on your folder structure
-import BookingModal from "../components/BookingModal"; 
+import BookingModal from "../components/BookingModal";
 
 const colors = {
   navy: "#0F2D81",
@@ -78,7 +78,7 @@ export default function ContactFooterSection() {
         className="pt-24 pb-8 relative font-sans text-white overflow-hidden drop-shadow-[0_-10px_30px_rgba(15,45,129,0.22)]"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
-          
+
           {/* --- Header Section --- */}
           <motion.div
             variants={containerVariants}
@@ -114,7 +114,7 @@ export default function ContactFooterSection() {
 
           {/* --- Contact Layout --- */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-20">
-            
+
             {/* Left Column: Brand & Contact Info */}
             <motion.div
               variants={containerVariants}
@@ -125,18 +125,11 @@ export default function ContactFooterSection() {
               {/* Brand Logo (Mirrors Navbar exactly) */}
               <motion.div variants={itemVariants} className="flex items-center gap-3.5 group cursor-pointer shrink-0 mb-4">
                 <img
-                  src="/logo.png"
+                  src="/handover-expert-logo.png"
                   alt="Handover expert Logo"
                   className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="flex flex-col justify-center leading-[0.9]">
-                  <span className="text-xl sm:text-2xl font-black uppercase tracking-wide text-white">
-                    Handover
-                  </span>
-                  <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.35em] text-[#EEBD08] mt-1.5">
-                    expert
-                  </span>
-                </div>
+
               </motion.div>
 
               {/* Info Cards */}
@@ -193,17 +186,17 @@ export default function ContactFooterSection() {
                 variants={itemVariants}
                 className="w-full bg-white/5 border border-white/10 rounded-3xl p-8 sm:p-12 backdrop-blur-xl shadow-2xl flex flex-col items-center justify-center text-center gap-6"
               >
-                <div 
+                <div
                   className="w-20 h-20 rounded-full flex items-center justify-center mb-2"
                   style={{ backgroundColor: `${colors.yellow}20`, color: colors.yellow }}
                 >
                   <CalendarDays size={40} strokeWidth={1.5} />
                 </div>
-                
+
                 <h3 className="text-3xl font-black text-white tracking-tight">
                   Secure Your Investment
                 </h3>
-                
+
                 <p className="text-zinc-300 text-base max-w-md mx-auto mb-4">
                   Don't leave your new property to chance. Schedule a comprehensive home inspection today and let our experts handle the rest.
                 </p>
@@ -254,9 +247,9 @@ export default function ContactFooterSection() {
       </section>
 
       {/* Mount the Booking Modal globally here */}
-      <BookingModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <BookingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </>
   );

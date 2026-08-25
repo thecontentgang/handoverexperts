@@ -62,12 +62,16 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Defects Illustrations Cloud */}
+        {/* 
+          Defects Illustrations Cloud 
+          - Mobile: 2x2 Grid (grid-cols-2)
+          - Desktop: Flex row with baseline alignment (sm:flex sm:flex-row)
+        */}
         <motion.div
           variants={fadeInUpVariants}
           initial="hidden"
           animate={controls}
-          className="w-full max-w-5xl lg:max-w-6xl flex flex-row justify-center items-end gap-2 sm:gap-6 md:gap-10 mb-8 md:mb-12 lg:mb-16 z-10"
+          className="w-full max-w-5xl lg:max-w-6xl grid grid-cols-2 place-items-center gap-y-4 gap-x-2 sm:flex sm:flex-row sm:justify-center sm:items-end sm:gap-6 md:gap-10 mb-8 md:mb-12 lg:mb-16 z-10 px-4 sm:px-0"
         >
           {/* 1. Leak Card */}
           <motion.img
@@ -77,7 +81,7 @@ export default function HeroSection() {
             decoding="async"
             animate={{ y: [0, -6, 0], rotate: [-1.5, 1.5, -1.5] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[22%] min-w-[65px] max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain translate-y-5 sm:translate-y-8 md:translate-y-12 lg:translate-y-16"
+            className="w-[85%] max-w-[130px] sm:w-[22%] sm:min-w-[65px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain translate-y-2 sm:translate-y-8 md:translate-y-12 lg:translate-y-16"
           />
 
           {/* 2. Electrical Card */}
@@ -88,7 +92,7 @@ export default function HeroSection() {
             decoding="async"
             animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[22%] min-w-[65px] max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain translate-y-0"
+            className="w-[85%] max-w-[130px] sm:w-[22%] sm:min-w-[65px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain -translate-y-2 sm:translate-y-0"
           />
 
           {/* 3. Finishing Card */}
@@ -99,7 +103,7 @@ export default function HeroSection() {
             decoding="async"
             animate={{ y: [0, -8, 0], rotate: [1.5, -1.5, 1.5] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[22%] min-w-[65px] max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain translate-y-0"
+            className="w-[85%] max-w-[130px] sm:w-[22%] sm:min-w-[65px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain -translate-y-2 sm:translate-y-0"
           />
 
           {/* 4. Cracks Card */}
@@ -110,7 +114,7 @@ export default function HeroSection() {
             decoding="async"
             animate={{ y: [0, -7, 0], rotate: [-2, 1, -2] }}
             transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[22%] min-w-[65px] max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain translate-y-5 sm:translate-y-8 md:translate-y-12 lg:translate-y-16"
+            className="w-[85%] max-w-[130px] sm:w-[22%] sm:min-w-[65px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[260px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)] object-contain translate-y-2 sm:translate-y-8 md:translate-y-12 lg:translate-y-16"
           />
         </motion.div>
 
