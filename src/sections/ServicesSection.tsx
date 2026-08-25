@@ -138,12 +138,11 @@ export default function ServicesSection() {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                whileHover={{ y: -6 }}
-                className="relative flex flex-col group transition-all duration-300 shadow-xl hover:shadow-2xl rounded-3xl"
+                className="relative flex flex-col transition-all duration-300 shadow-xl rounded-3xl"
               >
                 {/* The core White Box with Navy Border/Shadow */}
                 <div 
-                  className="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-5 flex-grow z-10 rounded-3xl bg-white border border-navy/10 group-hover:border-navy shadow-lg transition-colors"
+                  className="relative p-6 sm:p-8 flex flex-col items-start justify-start gap-5 flex-grow z-10 rounded-3xl bg-white border border-navy/10 shadow-lg transition-colors"
                 >
                   {/* Top Row: Title and Icon */}
                   <div className="flex flex-row items-center justify-between w-full gap-4">
@@ -151,7 +150,7 @@ export default function ServicesSection() {
                       {service.title}
                     </h3>
                     <div 
-                      className="bg-yellow w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shrink-0 shadow-md"
+                      className="bg-yellow w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 shrink-0 shadow-md"
                     >
                       <service.icon 
                         size={24} 

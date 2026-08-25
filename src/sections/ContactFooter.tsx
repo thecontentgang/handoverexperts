@@ -1,12 +1,17 @@
 import { motion, useAnimation, useInView, type Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
-  CheckCircle,
-  Mail,
   CalendarDays,
+  ArrowRight
 } from "lucide-react";
 // Adjust the import path based on your folder structure
 import BookingModal from "../components/BookingModal";
+
+const colors = {
+  navy: "#0F2D81",
+  yellow: "#EEBD08",
+  white: "#FFFFFF",
+};
 
 // --- Framer Motion Variants ---
 const containerVariants: Variants = {
@@ -27,7 +32,6 @@ const itemVariants: Variants = {
 };
 
 export default function ContactFooterSection() {
-  // State to handle the single source of truth for the booking form
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const controls = useAnimation();
@@ -44,140 +48,108 @@ export default function ContactFooterSection() {
     <>
       <section
         ref={ref}
-        className="pt-24 pb-8 relative font-sans text-navy bg-white overflow-hidden drop-shadow-[0_-10px_30px_rgba(15,45,129,0.05)]"
+        style={{ backgroundColor: colors.white }}
+        className="pt-24 pb-8 relative font-sans overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
 
-          {/* --- Header Section --- */}
+          {/* --- Massive CTA Banner (Reduced Height, Highly Responsive) --- */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            className="text-center max-w-3xl mx-auto mb-16 space-y-5"
+            className="relative w-full rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl mb-12 sm:mb-16"
           >
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-navy/20 bg-navy/5 shadow-xs"
-            >
-              <CheckCircle size={14} className="text-navy" />
-              <span className="text-xs font-bold tracking-wider text-navy uppercase">
-                Get In Touch
-              </span>
-            </motion.div>
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ 
+                // Placeholder high-quality architecture image. Replace with your own if needed.
+                backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop')" 
+              }}
+            />
+            {/* Deep Navy Overlay for Text Readability */}
+            <div 
+              className="absolute inset-0 " 
+              style={{ backgroundColor: "rgba(15, 45, 129, 0.9)" }} 
+            />
 
-            <motion.h2
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-navy"
-            >
-              Ready to book your <span className="text-[#EEBD08]">inspection?</span>
-            </motion.h2>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-base md:text-lg text-zinc-600 leading-relaxed font-medium"
-            >
-              Reach out to us directly or click below to schedule your inspection. Our team is ready to help you secure your new home with confidence.
-            </motion.p>
-          </motion.div>
-
-          {/* --- Contact Layout --- */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-20 items-center">
-
-            {/* Left Column: Brand & Contact Info */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate={controls}
-              className="lg:col-span-5 flex flex-col gap-10"
-            >
-              {/* Brand Logo (Mirrors Navbar exactly) */}
-              <motion.div variants={itemVariants} className="flex items-center gap-3.5 group cursor-pointer shrink-0">
-                <img
-                  src="/handover-expert-logo.png"
-                  alt="Handover expert Logo"
-                  className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </motion.div>
-
-              {/* Info Cards */}
-              {[
-                { icon: Mail, title: "Email Us", detail: "sushmitha@handoverexpert.com" },
-              ].map((info, idx) => (
-                <motion.div key={idx} variants={itemVariants} className="flex items-center gap-5 group cursor-pointer">
-                  <div
-                    className="bg-[#EEBD08] w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300"
-                  >
-                    <info.icon size={24} className="text-navy" strokeWidth={2.5} />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">
-                      {info.title}
-                    </h4>
-                    <p className="text-lg font-bold text-navy group-hover:text-[#EEBD08] transition-colors duration-300">
-                      {info.detail}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Right Column: Modal Trigger CTA */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate={controls}
-              className="lg:col-span-7 flex items-center"
-            >
+            {/* CTA Content (Tighter padding for shorter height) */}
+            <div className="relative z-10 px-6 py-12 sm:py-16 md:py-20 flex flex-col items-center text-center">
+              
               <motion.div
                 variants={itemVariants}
-                className="w-full bg-white border border-navy/10 rounded-3xl p-8 sm:p-12 shadow-lg flex flex-col items-center justify-center text-center gap-6"
+                style={{ backgroundColor: "rgba(238,189,8,0.2)", borderColor: "rgba(238,189,8,0.3)" }}
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-4 sm:mb-6 border"
               >
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mb-2 bg-[#EEBD08]/20"
-                >
-                  <CalendarDays size={40} className="text-navy" strokeWidth={1.5} />
-                </div>
+                <CalendarDays size={28} style={{ color: colors.yellow }} strokeWidth={2} />
+              </motion.div>
 
-                <h3 className="text-3xl font-black text-navy tracking-tight">
-                  Secure Your Investment
-                </h3>
+              <motion.h2
+                variants={itemVariants}
+                style={{ color: colors.white }}
+                className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight max-w-3xl mb-4"
+              >
+                Ready to secure your <br className="hidden sm:block"/>
+                <span style={{ color: colors.yellow }}>new home?</span>
+              </motion.h2>
 
-                <p className="text-zinc-600 text-base max-w-md mx-auto mb-4">
-                  Don't leave your new property to chance. Schedule a comprehensive home inspection today and let our experts handle the rest.
-                </p>
+              <motion.p
+                variants={itemVariants}
+                className="text-sm md:text-base text-zinc-300 leading-relaxed font-medium max-w-2xl mx-auto mb-8"
+              >
+                Don't leave your investment to chance. Schedule a comprehensive 400+ point home inspection today and let our experts uncover what builders won't tell you.
+              </motion.p>
 
+              {/* Responsive Button Container */}
+              <motion.div variants={itemVariants} className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                 <motion.button
-                  whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+                  whileHover={{ scale: 1.05, filter: "drop-shadow(0 10px 25px rgba(238,189,8,0.4))" }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-[#EEBD08] text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-md"
+                  style={{ backgroundColor: colors.yellow, color: colors.navy }}
+                  className="w-full sm:w-auto px-6 py-4 sm:px-10 sm:py-4 rounded-2xl font-black text-sm sm:text-base uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-lg"
                 >
                   Book Inspection Now
+                  <ArrowRight size={20} />
                 </motion.button>
               </motion.div>
-            </motion.div>
-          </div>
 
-          {/* --- Footer Area --- */}
+              
+            </div>
+          </motion.div>
+
+          {/* --- Footer Strip --- */}
           <motion.footer
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            className="border-t border-navy/10 pt-8 flex items-center justify-center text-center"
+            className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 px-2"
           >
+            {/* Logo */}
+            <motion.div variants={itemVariants} className="shrink-0 cursor-pointer">
+              <img
+                src="/handover-expert-logo.png"
+                alt="Handover expert Logo"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </motion.div>
+
+            {/* Copyright & Built By */}
             <motion.div 
               variants={itemVariants} 
-              className="text-xs sm:text-sm text-zinc-500 font-medium tracking-wide flex flex-col sm:flex-row items-center gap-1 sm:gap-2"
+              className="text-xs sm:text-sm text-zinc-500 font-medium tracking-wide flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center md:text-right"
             >
               <span>© {new Date().getFullYear()} Handover Expert. All rights reserved.</span>
-              <span className="hidden sm:inline">|</span>
+              <span className="hidden sm:inline text-zinc-300">|</span>
               <span>
                 Built by{" "}
                 <a 
                   href="https://thecontentgang.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-navy hover:text-[#EEBD08] font-bold transition-colors"
+                  style={{ color: colors.navy }}
+                  className="font-bold hover:opacity-80 transition-opacity"
                 >
                   thecontentgang.com
                 </a>

@@ -145,12 +145,31 @@ export default function ResultsSection() {
               </span>
             </motion.div>
             
-            <motion.h2
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-navy"
-            >
-              Watch How We Protect <span className="text-yellow">Your Home.</span>
-            </motion.h2>
+           <motion.h2
+  variants={itemVariants}
+  className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-navy"
+>
+  Watch How We Protect{" "}
+  <span className="relative inline-block whitespace-nowrap">
+    <span className="relative z-10 text-navy">Your Home.</span>
+    
+    {/* Hand-drawn SVG underline */}
+    <svg
+      className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 sm:h-5 text-yellow z-0"
+      viewBox="0 0 200 20"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 14C60 6 140 6 195 14"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+      />
+    </svg>
+  </span>
+</motion.h2>
             
             <motion.p
               variants={itemVariants}
@@ -189,25 +208,7 @@ export default function ResultsSection() {
           </motion.div>
 
           {/* --- View More Button --- */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-            className="flex justify-center mb-24"
-          >
-            <motion.a
-              href="https://www.youtube.com/@Hand-overexpert/shorts"
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-yellow text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
-            >
-              <Eye size={20} strokeWidth={2.5} />
-              View More
-            </motion.a>
-          </motion.div>
+          
 
           {/* --- Impact / Results Cards --- */}
           <motion.div
@@ -294,22 +295,32 @@ export default function ResultsSection() {
             </div>
 
             {/* --- Footer Narrative & CTA --- */}
-            <motion.div variants={itemVariants} className="bg-white border border-navy/10 shadow-lg rounded-3xl p-8 md:p-12 text-center max-w-5xl mx-auto">
-              <p className="text-base md:text-lg font-medium leading-relaxed mb-8 max-w-4xl mx-auto text-navy">
-                This is what home inspection services Hyderabad should feel like from the buyer's side: not a bureaucratic formality, but the one step in the entire property-buying process where someone is working entirely for you. When people search for Handover Expert by name after their inspection, it's usually to tell someone else to book us too — and that, more than any stat on this page, is the reason we keep doing this the way we do.
-              </p>
-              
-              <motion.button
-                whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => setIsModalOpen(true)}
-                className="bg-yellow text-navy px-6 py-4 sm:px-10 sm:py-5 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center justify-center gap-3 mx-auto transition-all shadow-md"
-              >
-                <CalendarCheck size={22} />
-                Book Your Inspection — Get Your Report in 24 Hours
-                <ArrowRight size={22} />
-              </motion.button>
-            </motion.div>
+            <motion.div 
+  variants={itemVariants} 
+  className="bg-navy border border-white/10 shadow-2xl rounded-3xl p-8 md:p-12 text-center max-w-5xl mx-auto relative overflow-hidden"
+>
+  {/* Subtle Yellow Background Accent Glow */}
+  <div className="absolute inset-0 w-full h-full opacity-20 bg-[radial-gradient(circle_at_50%_50%,#EEBD08_0%,transparent_60%)] pointer-events-none" />
+
+  {/* Content Wrapper to sit above the glow */}
+  <div className="relative z-10">
+    <p className="text-base md:text-lg font-medium leading-relaxed mb-8 max-w-4xl mx-auto text-zinc-300">
+      This is what home inspection services Hyderabad should feel like from the buyer's side: not a bureaucratic formality, but the one step in the entire property-buying process where someone is working entirely for you. When people search for Handover Expert by name after their inspection, it's usually to tell someone else to book us too — and that, more than any stat on this page, is the reason we keep doing this the way we do.
+    </p>
+    
+    <motion.button
+      whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+      whileTap={{ scale: 0.98 }}
+      onClick={() => setIsModalOpen(true)}
+      className="bg-yellow text-navy px-6 py-4 sm:px-10 sm:py-5 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center justify-center gap-3 mx-auto transition-all shadow-md"
+    >
+      <CalendarCheck size={22} />
+      <span className="hidden sm:inline">Book Your Inspection — Get Your Report in 24 Hours</span>
+      <span className="sm:hidden">Book Your Inspection</span>
+      <ArrowRight size={22} />
+    </motion.button>
+  </div>
+</motion.div>
 
           </motion.div>
         </div>

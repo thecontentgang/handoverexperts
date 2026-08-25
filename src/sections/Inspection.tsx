@@ -188,7 +188,7 @@ export default function InspectionCoverageSection() {
             variants={itemVariants}
             className="text-base md:text-[17px] text-zinc-600 leading-relaxed font-medium"
           >
-            A 400+ point home inspection covers essential areas like the foundation, plumbing, electrical systems, HVAC, and structure, along with checks for moisture damage and safety issues. Make informed decisions about the condition of your property.
+            A 700+ point home inspection covers essential areas like the foundation, plumbing, electrical systems, HVAC, and structure, along with checks for moisture damage and safety issues. Make informed decisions about the condition of your property.
           </motion.p>
         </motion.div>
 
@@ -239,43 +239,63 @@ export default function InspectionCoverageSection() {
         </motion.div>
 
         {/* --- Trust & Call to Action Banner --- */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="w-full max-w-6xl mx-auto rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl border border-navy/10 bg-white relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10"
-        >
-          {/* Subtle Background Accent for the banner */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-navy opacity-5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3" />
+       <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  animate={controls}
+  className="w-full max-w-6xl mx-auto rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl border border-white/10 bg-navy relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10"
+>
+  {/* Subtle Background Accents for the dark banner */}
+  <div className="absolute top-0 right-0 w-64 h-64 bg-yellow opacity-10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3" />
+  <div className="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/3" />
 
-          <div className="lg:max-w-2xl text-center lg:text-left relative z-10">
-            <motion.div variants={itemVariants} className="space-y-2 mb-6">
-              <h3 className="text-yellow text-xs font-bold tracking-widest uppercase">
-                400+ Inspection Points Covered
-              </h3>
-              <h4 className="text-3xl md:text-4xl font-black text-navy tracking-tight">
-                Professional Home Inspection You Can Trust.
-              </h4>
-            </motion.div>
+  <div className="lg:max-w-2xl text-center lg:text-left relative z-10">
+    <motion.div variants={itemVariants} className="space-y-2 mb-6">
+      <h3 className="text-yellow text-xs font-bold tracking-widest uppercase">
+        400+ Inspection Points Covered
+      </h3>
+      <h4 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-[1.2]">
+  Professional Home Inspection{" "}
+  <span className="relative inline-block whitespace-nowrap">
+    <span className="relative z-10 text-white">You Can Trust.</span>
+    
+    {/* Hand-drawn SVG underline */}
+    <svg
+      className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 sm:h-4 text-yellow z-0"
+      viewBox="0 0 200 20"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 14C60 6 140 6 195 14"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+      />
+    </svg>
+  </span>
+</h4>
+    </motion.div>
 
-            <motion.p variants={itemVariants} className="text-zinc-600 text-[15px] md:text-base leading-relaxed">
-              Our experts bring years of real on-site experience to check every part of your property with accuracy and care. With clear reports and honest guidance, we help you avoid future repair costs and protect your investment.
-            </motion.p>
-          </div>
+    <motion.p variants={itemVariants} className="text-zinc-300 text-[15px] md:text-base leading-relaxed">
+      Our experts bring years of real on-site experience to check every part of your property with accuracy and care. With clear reports and honest guidance, we help you avoid future repair costs and protect your investment.
+    </motion.p>
+  </div>
 
-          {/* CTA Button */}
-          <motion.div variants={itemVariants} className="shrink-0 relative z-10">
-            <motion.button
-              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => window.location.href = "tel:6303363041"}
-              className="bg-yellow text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
-            >
-              <PhoneCall size={20} strokeWidth={2.5} />
-              Get in Touch
-            </motion.button>
-          </motion.div>
-        </motion.div>
+  {/* CTA Button */}
+  <motion.div variants={itemVariants} className="shrink-0 relative z-10">
+    <motion.button
+      whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+      whileTap={{ scale: 0.98 }}
+      onClick={() => window.location.href = "tel:6303363041"}
+      className="bg-yellow text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
+    >
+      <PhoneCall size={20} strokeWidth={2.5} />
+      Get in Touch
+    </motion.button>
+  </motion.div>
+</motion.div>
 
       </div>
     </section>

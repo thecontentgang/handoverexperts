@@ -10,8 +10,6 @@ import {
   AlertCircle
 } from "lucide-react";
 
-
-
 // --- Data for Scenarios ---
 const scenarios = [
   {
@@ -134,8 +132,7 @@ export default function WhenToInspectSection() {
             <motion.div
               key={scenario.id}
               variants={fadeInUpVariants}
-              whileHover={{ y: -5, borderColor: "rgba(15, 45, 129, 0.3)", boxShadow: "0 10px 25px -5px rgba(15,45,129,0.1)" }}
-              className="bg-white border border-navy/10 shadow-lg rounded-3xl p-8 transition-all duration-300 flex flex-col h-full"
+              className="bg-white border border-navy/10 shadow-lg rounded-3xl p-8 flex flex-col h-full"
             >
               <div 
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm bg-yellow/15 border border-yellow/40"

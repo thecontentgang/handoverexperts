@@ -1,6 +1,6 @@
 import { motion, useAnimation, useInView, type Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { MapPin } from "lucide-react";
+import { MapPin, Star, Users } from "lucide-react";
 import BookingModal from "../components/BookingModal";
 
 const customColors = {
@@ -42,7 +42,8 @@ export default function HeroSection() {
     <>
       <div
         ref={ref}
-        className="h-[100dvh] bg-white text-navy relative overflow-hidden flex flex-col justify-center items-center px-4"
+        // Changed to min-h-[100dvh] and added vertical padding to prevent crowding
+        className="min-h-[100dvh] py-18 md:py-14 bg-white text-navy relative overflow-hidden flex flex-col justify-center items-center px-4"
       >
         {/* Structural Minimal Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,45,129,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,45,129,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
@@ -70,7 +71,7 @@ export default function HeroSection() {
           variants={fadeInUpVariants}
           initial="hidden"
           animate={controls}
-          className="w-full max-w-5xl lg:max-w-6xl grid grid-cols-2 place-items-center gap-y-4 gap-x-2 sm:flex sm:flex-row sm:justify-center sm:items-end sm:gap-6 md:gap-10 mb-8 md:mb-12 lg:mb-16 z-10 px-4 sm:px-0"
+          className="w-full max-w-5xl lg:max-w-6xl grid grid-cols-2 place-items-center gap-y-4 gap-x-2 sm:flex sm:flex-row sm:justify-center sm:items-end sm:gap-6 md:gap-10 mb-10 md:mb-16 z-10 px-4 sm:px-0"
         >
           {/* 1. Leak Card */}
           <motion.img
@@ -122,7 +123,7 @@ export default function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="w-full max-w-6xl mx-auto text-center space-y-2 md:space-y-2 relative z-20 flex flex-col items-center"
+          className="w-full max-w-6xl mx-auto text-center space-y-4 md:space-y-6 relative z-20 flex flex-col items-center"
         >
           {/* Location Badge */}
           <motion.div
@@ -138,16 +139,32 @@ export default function HeroSection() {
           {/* Headline Stack */}
           <div className="space-y-4 md:space-y-2 w-full">
             <motion.h2
-              variants={fadeInUpVariants}
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-[4.5rem] font-black tracking-tight leading-[1.1] text-navy"
-            >
-              Find Hidden House Defects
-              <br className="hidden sm:block" />
-              Before You{" "}
-              <span className="text-yellow inline-block mt-1 sm:mt-0">
-                Take Handover.
-              </span>
-            </motion.h2>
+  variants={fadeInUpVariants}
+  className="text-4xl sm:text-5xl md:text-7xl lg:text-[4.5rem] font-black tracking-tight leading-[1.1] text-navy"
+>
+  Find Hidden House Defects
+  <br className="hidden sm:block" />
+  Before You{" "}
+  <span className="relative inline-block mt-1 sm:mt-0 whitespace-nowrap">
+    <span className="relative z-10 text-navy">Take Handover.</span>
+    
+    {/* Hand-drawn SVG underline */}
+    <svg
+      className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 sm:h-5 text-yellow z-0"
+      viewBox="0 0 200 20"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 14C60 6 140 6 195 14"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+      />
+    </svg>
+  </span>
+</motion.h2>
 
             {/* Description Updated Based on New Copy */}
             <motion.p
@@ -158,41 +175,69 @@ export default function HeroSection() {
             </motion.p>
           </div>
 
+          {/* --- Trust Badges Moved Above Buttons --- */}
+          <motion.div
+            variants={fadeInUpVariants}
+            className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mt-2 sm:mt-4 mb-2 z-20 px-2"
+          >
+            {/* Google Reviews Badge */}
+            <div className="flex items-center gap-1.5 sm:gap-2 bg-white border border-navy/10 shadow-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
+              <div className="flex -space-x-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} fill={customColors.yellowGold} color={customColors.yellowGold} size={14} className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                ))}
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-navy tracking-wide">
+                1.4k+ Reviews on Google
+              </span>
+            </div>
+
+            {/* Social Media Followers Badge */}
+            <div className="flex items-center gap-1.5 sm:gap-2 bg-white border border-navy/10 shadow-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-navy/5 flex items-center justify-center">
+                <Users size={12} className="text-navy sm:w-3.5 sm:h-3.5" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-navy tracking-wide">
+                90k+ Followers combined
+              </span>
+            </div>
+          </motion.div>
+
           {/* Synchronized Call To Actions */}
           <motion.div
-  variants={fadeInUpVariants}
-  // 1. Changed "items-center" to "items-stretch" to force equal heights
-  className="flex flex-row gap-2 sm:gap-4 justify-center items-stretch w-full pt-4 md:pt-6"
->
-  <motion.button
-    whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-    whileTap={{ scale: 0.98 }}
-    onClick={() => setIsModalOpen(true)}
-    // 2. Added "h-full" and adjusted mobile text size/padding to fit perfectly
-    className="flex-1 sm:flex-none h-full bg-yellow text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
-  >
-    Book My Inspection
-  </motion.button>
+            variants={fadeInUpVariants}
+            className="flex flex-row gap-2 sm:gap-4 justify-center items-stretch w-full pt-2"
+          >
+            {/* Primary Button */}
+            <motion.button
+              whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setIsModalOpen(true)}
+              className="flex-1 sm:flex-none h-full bg-yellow text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
+            >
+              Book My Inspection
+            </motion.button>
 
-  <motion.button
-    whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
-    whileTap={{ scale: 0.98 }}
-    onClick={() => {
-      if (window.innerWidth < 640) {
-        window.location.href = "tel:+916303363041";
-      }
-    }}
-    // 2. Added "h-full" and matching text size/padding
-    className="flex-1 sm:flex-none h-full bg-yellow text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center shadow-md transition-all text-center leading-tight"
-  >
-    <span className="sm:hidden">
-      Talk to Expert
-    </span>
-    <span className="hidden sm:inline">
-      Talk to Expert
-    </span>
-  </motion.button>
-</motion.div>
+            {/* Transparent Button with Navy Border */}
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(15, 45, 129, 0.05)" }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                if (window.innerWidth < 640) {
+                  window.location.href = "tel:+916303363041";
+                }
+              }}
+              className="flex-1 sm:flex-none h-full bg-transparent border-2 border-navy text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center transition-all text-center leading-tight"
+            >
+              <span className="sm:hidden">
+                Talk to Expert
+              </span>
+              <span className="hidden sm:inline">
+                Talk to Expert
+              </span>
+            </motion.button>
+          </motion.div>
+
         </motion.div>
       </div>
       <BookingModal isOpen={isModal} onClose={() => setIsModalOpen(false)} />
