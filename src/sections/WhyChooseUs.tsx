@@ -14,7 +14,7 @@ import {
 
 // --- Data extracted from original snippet ---
 const comparisonData = [
-  { parameter: "Inspection Checkpoints", us: "SOP based 700+ detailed checkpoints", them: "Usually 100-200 checkpoints" },
+  { parameter: "Inspection Checkpoints", us: "SOP based 400+ detailed checkpoints", them: "Usually 100-200 checkpoints" },
   { parameter: "Team Expertise", us: "Trained full-time engineers", them: "Individual freelancers or part-time inspectors" },
   { parameter: "Inspection Process", us: "Tech Driven SOP-driven process", them: "Depends on individual inspector" },
   { parameter: "Report Quality", us: "Detailed digital report with photos & observations", them: "Basic PDF or checklist report" },

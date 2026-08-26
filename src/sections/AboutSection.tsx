@@ -48,7 +48,7 @@ export default function AboutSection() {
           <p>10K+ Homes Checked · 40K+ Defects Found · 1K+ Google Reviews · 58K+ Followers</p>
           <p>Numbers only mean something if they translate into trust — so here's the honest version. Over 10,000 homes inspected across Hyderabad. Over 40,000 individual defects caught before buyers took possession — defects that would otherwise have become their expense, not the builder's. And a track record built by full-time, trained engineers, not freelancers working off a printed checklist.</p>
           <p>This is why Handover Expert consistently comes up when people search for the best home inspection services in Hyderabad. We don't chase the label of best home inspection company near me — we've earned it the slow way, one inspected home at a time. If you're comparing quality home inspection services before booking anyone, ask this one question: how many homes has this team actually inspected, and can they show you the reports? We can.</p>
-          <p>Handover Expert stands as one of the few names offering genuinely total home inspection services in the city — covering residential and commercial, new construction and resale, all under one standardized 700+ point process.</p>
+          <p>Handover Expert stands as one of the few names offering genuinely total home inspection services in the city — covering residential and commercial, new construction and resale, all under one standardized 400+ point process.</p>
         </div>
 
         <motion.div
@@ -146,7 +146,7 @@ export default function AboutSection() {
             {/* Homes Inspected (Outer Left) */}
             <div className="text-center sm:flex-1 opacity-80 translate-y-0 sm:translate-y-8 md:translate-y-10">
               <h3 className="text-blue-600 text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-sm">
-                40K+
+                20,000+
               </h3>
               <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Homes Inspected
@@ -176,7 +176,7 @@ export default function AboutSection() {
             {/* Checkpoints Covered (Outer Right) */}
             <div className="text-center sm:flex-1 opacity-80 translate-y-0 sm:translate-y-8 md:translate-y-10">
               <h3 className="text-blue-600 text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-none mb-1 md:mb-3 drop-shadow-sm">
-                700+
+                400+
               </h3>
               <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-zinc-600">
                 Checkpoints Covered

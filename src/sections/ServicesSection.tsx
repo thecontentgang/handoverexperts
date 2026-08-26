@@ -19,7 +19,7 @@ const servicesData = [
   {
     id: 1,
     title: "Full Home Inspection",
-    description: "Our comprehensive 700+ point check covers plumbing, wiring, walls, and build quality to ensure your home is genuinely safe and move-in ready.",
+    description: "Our comprehensive 400+ point check covers plumbing, wiring, walls, and build quality to ensure your home is genuinely safe and move-in ready.",
     icon: Home,
   },
   {
@@ -49,7 +49,7 @@ const servicesData = [
   {
     id: 6,
     title: "Commercial Property",
-    description: "We apply our strict 700+ point standard to offices and retail units, ensuring your commercial space is flawless before fit-outs begin.",
+    description: "We apply our strict 400+ point standard to offices and retail units, ensuring your commercial space is flawless before fit-outs begin.",
     icon: Building,
   },
 ];
@@ -99,7 +99,7 @@ export default function ServicesSection() {
           <p>Seepage Inspection — Water damage is the defect Hyderabad buyers regret missing the most, especially in Gachibowli and HITEC City towers where slab seepage is common. Using thermal imaging, we detect hidden moisture inside walls and ceilings months before it becomes a visible stain — or a mold problem you can smell before you see.</p>
           <p>Multi-Stage Inspection — For under-construction properties, this is where building inspection services Hyderabad buyers actually save money. We inspect at critical construction phases — foundation, structure, finishing — so mistakes get caught while they're still cheap to correct, not after the walls are sealed shut.</p>
           <p>Water Quality Check — Because "the taps work" and "the water is safe" are two very different claims. We test TDS levels, hardness, and impurities so your family isn't drinking — or bathing in — a problem nobody flagged.</p>
-          <p>Commercial Property Inspection — Offices, retail units, and business spaces deserve property inspection services with the same rigor as a home, arguably more, given lease timelines and fit-out deadlines. Our commercial property inspection services apply the same 700+ point standard to commercial handovers across the city.</p>
+          <p>Commercial Property Inspection — Offices, retail units, and business spaces deserve property inspection services with the same rigor as a home, arguably more, given lease timelines and fit-out deadlines. Our commercial property inspection services apply the same 400+ point standard to commercial handovers across the city.</p>
           <p>Whether you need flat inspection services in Hyderabad, apartment inspection in Hyderabad, or villa inspection in Hyderabad, the checklist depth never changes — only the details do. This is what genuine property inspection looks like when it's built around your specific property, not a template.</p>
         </div>
 

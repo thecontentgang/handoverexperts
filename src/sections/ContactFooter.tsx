@@ -98,7 +98,7 @@ export default function ContactFooterSection() {
                 variants={itemVariants}
                 className="text-sm md:text-base text-zinc-300 leading-relaxed font-medium max-w-2xl mx-auto mb-8"
               >
-                Don't leave your investment to chance. Schedule a comprehensive 700+ point home inspection today and let our experts uncover what builders won't tell you.
+                Don't leave your investment to chance. Schedule a comprehensive 400+ point home inspection today and let our experts uncover what builders won't tell you.
               </motion.p>
 
               {/* Responsive Button Container */}

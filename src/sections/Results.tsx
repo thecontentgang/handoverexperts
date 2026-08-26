@@ -55,7 +55,7 @@ const reviewsData = [
     id: 2,
     name: "Sneha Sharma",
     location: "Kondapur, Hyderabad",
-    text: "Highly professional team. The 700+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend."
+    text: "Highly professional team. The 400+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend."
   },
   {
     id: 3,
@@ -118,7 +118,7 @@ export default function ResultsSection() {
           <h2>Trusted by Hyderabad Homebuyers — Reviews</h2>
           <p>Real feedback from real home inspection services Hyderabad customers — not curated marketing lines, actual reviews from people who booked us before taking possession:</p>
           <blockquote>"Saved me from buying a flat with hidden seepage issues. The thermal scanning was an eye-opener. Best investment before taking handover!" — Rahul Reddy, Gachibowli, Hyderabad</blockquote>
-          <blockquote>"Highly professional team. The 700+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend." — Sneha Sharma, Kondapur, Hyderabad</blockquote>
+          <blockquote>"Highly professional team. The 400+ point checklist is real. They found electrical faults that the builder had to fix immediately. Highly recommend." — Sneha Sharma, Kondapur, Hyderabad</blockquote>
           <blockquote>"Being an NRI, I couldn't be there for the handover. Handover Expert took care of everything and sent a highly detailed digital report. Perfect service." — Vikram K., HITEC City, Hyderabad</blockquote>
           <blockquote>"The team was incredibly thorough. They spent 4 hours inspecting our villa and found things we would have never noticed. The report was easy to read." — Ananya Singh, Hyderabad</blockquote>
           <blockquote>"Worth every penny! Forced the builder to fix hollow tiles and a major plumbing issue in the master bathroom before we moved in." — Mohammed Tariq, Hyderabad</blockquote>
