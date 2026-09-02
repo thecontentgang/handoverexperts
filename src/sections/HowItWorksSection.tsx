@@ -29,7 +29,7 @@ const stepsData = [
   {
     step: "03",
     title: "Your Home Is Inspected",
-    description: "We systematically inspect the property using our 700+ point checklist.",
+    description: "We systematically inspect the property using our 400+ point checklist.",
     icon: ClipboardCheck,
   },
   {
@@ -99,7 +99,7 @@ export default function HowItWorksSection() {
           <ol>
             <li>01 — Book Your Inspection: Share your location, property details and preferred date with our team.</li>
             <li>02 — Engineer Visits Your Home: Our inspection engineer visits the property at the scheduled time.</li>
-            <li>03 — Your Home Is Inspected: We systematically inspect the property using our 700+ point checklist.</li>
+            <li>03 — Your Home Is Inspected: We systematically inspect the property using our 400+ point checklist.</li>
             <li>04 — Defects Are Documented: Identified issues are recorded with relevant observations and supporting evidence.</li>
             <li>05 — Receive Your Report: You receive a detailed inspection report showing the issues identified during the inspection.</li>
             <li>06 — Raise It With Your Builder: Use the report to communicate the identified defects and request rectification before handover.</li>
