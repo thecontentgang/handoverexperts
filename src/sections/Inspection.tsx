@@ -288,7 +288,7 @@ export default function InspectionCoverageSection() {
     <motion.button
       whileHover={{ scale: 1.05, filter: "drop-shadow(0 4px 15px rgba(238,189,8,0.5))" }}
       whileTap={{ scale: 0.98 }}
-      onClick={() => window.location.href = "tel:6303363041"}
+      onClick={() => window.location.href = "tel:8309531411"}
       className="bg-yellow text-navy px-8 py-4 rounded-xl font-black text-base lg:text-lg uppercase tracking-widest flex items-center gap-3 transition-all shadow-md"
     >
       <PhoneCall size={20} strokeWidth={2.5} />

@@ -252,7 +252,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               onClick={() => {
                 if (window.innerWidth < 640) {
-                  window.location.href = "tel:+916303363041";
+                  window.location.href = "tel:+918309531411";
                 }
               }}
               className="flex-1 sm:flex-none h-full bg-transparent border-2 border-navy text-navy font-black px-1 sm:px-8 py-3.5 sm:py-4 md:px-10 md:py-5 rounded-xl text-[11px] sm:text-base lg:text-lg tracking-widest uppercase flex items-center justify-center transition-all text-center leading-tight"

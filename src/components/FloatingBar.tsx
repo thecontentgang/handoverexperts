@@ -29,13 +29,13 @@ export default function FloatingContactButton() {
       icon: <Phone size={24} className="text-navy" strokeWidth={2.5} />,
       label: "Call Us",
       color: colors.yellow,
-      href: "tel:+916303363041",
+      href: "tel:+918309531411",
     },
     {
       icon: <WhatsAppIcon size={24} />,
       label: "WhatsApp",
       color: "#25D366",
-      href: "https://wa.me/916303363041",
+      href: "https://wa.me/918309531411",
     },
   ];
 
