@@ -12,8 +12,13 @@ import WhenToInspectSection from "./sections/WhenToInspectSection";
 import AreasWeServeSection from "./sections/AreasWeServeSection";
 import FAQSection from "./sections/FAQSection";
 import HowItWorksSection from "./sections/HowItWorksSection";
+import ThankYouPage from "./components/ThankYouPage";
 
 const App = () => {
+  if (window.location.pathname === "/thank-you") {
+    return <ThankYouPage />;
+  }
+
   return (
     <main>
       <FloatingContactButton />
