@@ -134,6 +134,7 @@ export default function BookingModal({
 
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
       
+      sessionStorage.setItem("formSubmitted", "true");
       window.location.assign("/thank-you");
 
     } catch (error) {

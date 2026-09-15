@@ -16,6 +16,10 @@ import ThankYouPage from "./components/ThankYouPage";
 
 const App = () => {
   if (window.location.pathname === "/thank-you") {
+    if (!sessionStorage.getItem("formSubmitted")) {
+      window.location.replace("/");
+      return null;
+    }
     return <ThankYouPage />;
   }
 
